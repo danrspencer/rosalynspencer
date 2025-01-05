@@ -1,17 +1,17 @@
 ---
 # Display name
-title: 吳健雄
+title: Rosalyn Spencer
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+# name_pronunciation: Rosalyn Spencer
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Rosalyn
+last_name: Spencer
 
 # Status emoji
-status:
-  icon: ☕️
+# status:
+#   icon: ☕️
 
 # Is this the primary user of the site?
 superuser: true
@@ -20,36 +20,37 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Educator and Writer
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  # - name: OpenAI
+  #   url: https://openai.com/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
-profiles:
-  - icon: at-symbol
-    url: 'mailto:your-email@example.com'
-    label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
-  - icon: brands/github
-    url: https://github.com/gcushen
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/
-  - icon: academicons/orcid
-    url: https://orcid.org/
+# profiles:
+#   - icon: at-symbol
+#     url: 'mailto:your-email@example.com'
+#     label: E-mail Me
+#   - icon: brands/x
+#     url: https://twitter.com/GetResearchDev
+#   - icon: brands/instagram
+#     url: https://www.instagram.com/
+#   - icon: brands/github
+#     url: https://github.com/gcushen
+#   - icon: brands/linkedin
+#     url: https://www.linkedin.com/
+#   - icon: academicons/google-scholar
+#     url: https://scholar.google.com/
+#   - icon: academicons/orcid
+#     url: https://orcid.org/
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Alternative Education
+  - Small School Development
+  - Education Consultancy
+  - Human-Scale Learning
 
 education:
   - area: PhD Artificial Intelligence
@@ -144,10 +145,6 @@ skills:
 languages:
   - name: English
     percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -183,4 +180,4 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Rosalyn Spencer is an experienced educator specializing in alternative approaches to learning. With over 25 years in teaching and leadership, she has founded and led innovative educational projects, including a children’s nursery and a small, non-fee-paying school. Her groundbreaking research into alternative education, including a nationwide study of Human Scale Education schools, inspired her writing career and a Master’s in Education by Research.

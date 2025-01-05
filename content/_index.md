@@ -15,16 +15,16 @@ sections:
       username: admin
       text: ""
       # Show a call-to-action button under your biography? (optional)
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
+      # button:
+      #   text: Download CV
+      #   url: uploads/resume.pdf
     design:
       css_class: dark
       background:
         color: black
         image:
           # Add your image background to `assets/media/`.
-          filename: stacked-peaks.svg
+          filename: background.svg
           filters:
             brightness: 1.0
           size: cover
@@ -32,14 +32,14 @@ sections:
           parallax: false
   - block: markdown
     content:
-      title: '📚 My Research'
+      title: '📚 My Work'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        My focus is on creating education systems that allow every child to succeed. I’ve spent years researching alternative approaches to education, with a particular interest in small schools and human-scale learning environments.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
-        
-        Please reach out to collaborate 😃
+        This work has included a nationwide study of alternative schools, which formed the basis of my book, Why I Started a Small School, and my Master’s Degree in Education by Research.
+
+        If you’re interested in discussing alternative approaches to education, I’d be delighted to hear from you.
     design:
       columns: '1'
   - block: collection
