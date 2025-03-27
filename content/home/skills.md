@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 30  # Order that this section will appear.
 
 title = "Skills"
-subtitle = "RESEARCH AND ACADEMIC EXPERTISE"
+subtitle = "EDUCATIONAL EXPERTISE"
 
 # Showcase personal skills or business features.
 # 
@@ -15,39 +15,39 @@ subtitle = "RESEARCH AND ACADEMIC EXPERTISE"
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
 
 [[feature]]
-  icon = "book-open"
+  icon = "school"
   icon_pack = "fas"
-  name = "Curriculum Development"
-  parcent = "90%"
+  name = "Small School Education"
+  parcent = ""
   
 [[feature]]
-  icon = "chart-line"
+  icon = "home"
   icon_pack = "fas"
-  name = "Research Methods"
-  parcent = "95%"
+  name = "Home Education"
+  parcent = ""
   
 [[feature]]
-  icon = "users"
+  icon = "child"
   icon_pack = "fas"
-  name = "Educational Leadership"
-  parcent = "85%"
+  name = "Early Childhood Education"
+  parcent = ""
 
 [[feature]]
   icon = "pen"
   icon_pack = "fas"
-  name = "Academic Writing"
-  parcent = "90%"
+  name = "Educational Writing"
+  parcent = ""
   
 [[feature]]
-  icon = "graduation-cap"
+  icon = "users"
   icon_pack = "fas"
-  name = "Teaching"
-  parcent = "95%"
+  name = "Alternative Education"
+  parcent = ""
   
 [[feature]]
-  icon = "globe"
+  icon = "search"
   icon_pack = "fas"
-  name = "Education Policy"
-  parcent = "80%"
+  name = "Educational Research"
+  parcent = ""
 
 +++

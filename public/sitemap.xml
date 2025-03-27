@@ -2,147 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/courses/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>http://localhost:53445/authors/admin/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/example.1/example3/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>http://localhost:53445/publication_types/5/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/example.2/example3/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>http://localhost:53445/tags/alternative-education/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/example.1/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/authors/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/example.2/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/tags/education/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/project/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/example.2/example4/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>http://localhost:53445/publication_types/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>http://localhost:53445/publication/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/example.1/example4/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>http://localhost:53445/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/talk/coding/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/tags/small-schools/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/talk/qualitative/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/tags/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/project/small-school-book/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/publication/small-school-book/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/talk/synthesizing/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/project/small-is-beautiful/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/courses/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/admin/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/publication_types/3/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/publication/preprint/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/publication_types/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/publication/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/source-themes/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/jupyter/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/privacy/</loc>
+    <loc>http://localhost:53445/privacy/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/project/artificial-intelligence/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/project/home-schooling-research/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/tags/research/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/project/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/project/small-schools-case-studies/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/demo/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/project/external-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/courses/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/human/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <loc>http://localhost:53445/post/</loc>
   </url><url>
-    <loc>http://localhost:1313/project/internal-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/robotics/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/project/robotics/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/project/skin-cancer-ai/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/snail/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/academia/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/getting-started/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/publication_types/2/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/publication/journal-article/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/robert-ford/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/publication_types/1/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/publication/conference-paper/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:53445/talk/</loc>
   </url>
 </urlset>

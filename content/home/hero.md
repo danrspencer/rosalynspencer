@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Academia"
+title = "Rosalyn Spencer"
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
 hero_media = "user-2.jpg"
@@ -42,6 +42,6 @@ hero_media = "user-2.jpg"
   label = "Contact me"
 
 +++
-## My name is **Michael Vahn** and I'm a **Professor** specializing in **Artificial Intelligence**
+## Author of **'Why I Started a Small School'**
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.
+With over 25 years teaching experience, my lifetime's work has involved finding ways of helping individuals to succeed, ranging from young children struggling to survive in mainstream education to setting up and running a non-fee paying 'alternative' small school.

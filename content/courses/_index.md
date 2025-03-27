@@ -1,10 +1,15 @@
 ---
 title: Courses
-layout: docs  # Do not modify.
+cms_exclude: true
 
-# Optional header image (relative to `static/img/` folder).
+# View.
+#   1 = List
+#   2 = Compact
+#   3 = Card
+view: 2
+
+# Optional header image (relative to `static/media/` folder).
 header:
   caption: ""
   image: ""
 ---
-

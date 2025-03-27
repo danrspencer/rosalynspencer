@@ -14,35 +14,32 @@ btn:
 superuser: true
 
 # Role/position
-role: Academic Researcher
+role: Author of 'Why I Started a Small School'
 
 # Organizations/Affiliations
 organizations:
-- name: University of London
+- name: 
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include academic research, education, and curriculum development.
+bio: With over 25 years teaching experience, my lifetime's work has involved finding ways of helping individuals to succeed.
 
 # Should the user's education and interests be displayed?
-display_education: true
+display_education: false
 
 interests:
-- Education
-- Research
-- Curriculum Development
+- Small Schools Education
+- Alternative Education
+- Home Education
 
 education:
   courses:
-  - course: PhD in Education
-    institution: University of London
-    year: 2018
-  - course: MEd in Education
-    institution: University of London
-    year: 2014
-  - course: BA in English Literature
-    institution: University of Cambridge
-    year: 2010
+  - course: Masters Degree in Education by Research
+    institution: 
+    year: 
+  - course: Teaching Experience
+    institution: Various Educational Settings
+    year: 25+ years
 
 # Social/academia Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -52,9 +49,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: linkedin
+- icon: facebook
   icon_pack: fab
-  link: https://www.linkedin.com/in/rosalynspencer
+  link: https://www.facebook.com/rosalynspencer
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
@@ -71,6 +68,8 @@ user_groups:
 - Visitors
 ---
 
-Rosalyn Spencer is an academic researcher specializing in education and curriculum development. Her research focuses on innovative teaching methods and educational policy reform.
+With over 25 years teaching experience, my lifetime's work has involved finding ways of helping individuals to succeed, ranging from young children struggling to survive in mainstream education and teenagers in care, to setting up and running a children's nursery, and then a non-fee paying 'alternative' small school. I have also had the enlightening experience of home educating my own two children.
 
-With over 10 years of experience in the education sector, Rosalyn has contributed to numerous publications and projects aimed at improving educational outcomes and teaching practices.
+In order to spread the word about alternative approaches to mainstream education, I visited all the small schools affiliated to the national organisation Human Scale Education during the summer term of 1997. Together with my two children, then aged 8 and 13, I travelled around England and Scotland in a caravan for ten weeks visiting fifteen small schools. This trip was a pivotal factor in kick starting my writing career as well as being the basis for my Masters Degree in Education by Research.
+
+Both my children have long since left home, and I remarried in 2011. I spend my free time taking photographs, playing classical guitar, swimming, and of course, writing.

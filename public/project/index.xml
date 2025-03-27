@@ -2,73 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Rosalyn Spencer</title>
-    <link>http://localhost:1313/project/</link>
+    <link>http://localhost:53445/project/</link>
     <description>Recent content in Projects on Rosalyn Spencer</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; {year} Rosalyn Spencer</copyright>
-    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="http://localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="http://localhost:53445/project/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Artificial Intelligence</title>
-      <link>http://localhost:1313/project/artificial-intelligence/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/project/artificial-intelligence/</guid>
-      <description></description>
-    </item>
     
     <item>
-      <title>Deep Learning</title>
-      <link>http://localhost:1313/project/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Why I Started a Small School</title>
+      <link>http://localhost:53445/project/small-school-book/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/project/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>External Project</title>
-      <link>http://localhost:1313/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/project/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>http://localhost:1313/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+      <guid>http://localhost:53445/project/small-school-book/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Why I Started a Small School&amp;rdquo; tells the story of my journey in setting up and running a non-fee paying &amp;lsquo;alternative&amp;rsquo; small school. This book draws from my extensive experience of over 25 years in teaching, working with children from various backgrounds and educational needs.&lt;/p&gt;
+&lt;p&gt;The book explores the challenges and rewards of creating an educational environment that focuses on the individual needs of children, particularly those who have struggled in mainstream education. It shares insights from my experience visiting fifteen small schools affiliated with Human Scale Education during a ten-week caravan journey through England and Scotland with my two children.&lt;/p&gt;
+&lt;p&gt;This journey was not only pivotal in kick-starting my writing career but also formed the basis for my Masters Degree in Education by Research.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Robotics</title>
-      <link>http://localhost:1313/project/robotics/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Small Is Beautiful</title>
+      <link>http://localhost:53445/project/small-is-beautiful/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/project/robotics/</guid>
-      <description></description>
+      <guid>http://localhost:53445/project/small-is-beautiful/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Small Is Beautiful&amp;rdquo; explores the philosophy and practical benefits of small-scale educational environments. Based on my experience in both mainstream education and running a small school, this article discusses how smaller educational settings can provide more personalized attention and better meet the individual needs of students.&lt;/p&gt;
+&lt;p&gt;The article draws upon my research from visiting fifteen small schools across England and Scotland, highlighting successful approaches and methodologies that foster student engagement, well-being, and academic success in these environments.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Skin Cancer AI</title>
-      <link>http://localhost:1313/project/skin-cancer-ai/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Home Schooling Research Findings</title>
+      <link>http://localhost:53445/project/home-schooling-research/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/project/skin-cancer-ai/</guid>
-      <description></description>
+      <guid>http://localhost:53445/project/home-schooling-research/</guid>
+      <description>&lt;p&gt;This research paper explores the practice, challenges, and outcomes of home education, drawing on my personal experience of home educating my own two children along with broader research in the field.&lt;/p&gt;
+&lt;p&gt;The findings discuss various approaches to home education, the motivations behind families choosing this path, and the educational and social outcomes observed in home-educated children. The paper examines how home education can be tailored to individual learning styles and needs, offering insights into successful methodologies and potential challenges.&lt;/p&gt;
+&lt;p&gt;The research also considers how home education interacts with mainstream educational systems and societal expectations, providing a nuanced view of this alternative educational approach.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Small Schools - Two Case Studies</title>
+      <link>http://localhost:53445/project/small-schools-case-studies/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:53445/project/small-schools-case-studies/</guid>
+      <description>&lt;p&gt;This detailed case study examines two small schools, providing an in-depth look at their educational philosophies, teaching approaches, organizational structures, and community impact.&lt;/p&gt;
+&lt;p&gt;Drawing from my extensive research during my journey visiting fifteen small schools affiliated with Human Scale Education, these case studies highlight the distinctive characteristics that make small schools effective learning environments. The paper discusses how these schools address the individual needs of their students, create supportive community atmospheres, and navigate the challenges of operating outside mainstream educational systems.&lt;/p&gt;
+&lt;p&gt;The research compares different models of small school education while identifying common factors that contribute to their success. It also considers the implications for broader educational policy and practice, suggesting how elements from small schools might inform improvements in mainstream education.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

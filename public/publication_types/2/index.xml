@@ -2,33 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2 on Rosalyn Spencer</title>
-    <link>http://localhost:1313/publication_types/2/</link>
+    <link>http://localhost:53250/publication_types/2/</link>
     <description>Recent content in 2 on Rosalyn Spencer</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; {year} Rosalyn Spencer</copyright>
-    <lastBuildDate>Tue, 01 Sep 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Mar 2021 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="http://localhost:1313/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="http://localhost:53250/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>An example journal article</title>
-      <link>http://localhost:1313/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <title>Reimagining Assessment: A Framework for Authentic Evaluation in Modern Classrooms</title>
+      <link>http://localhost:53250/publication/education-journal/</link>
+      <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo academia&amp;rsquo;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+      <guid>http://localhost:53250/publication/education-journal/</guid>
+      <description>&lt;p&gt;This research paper has been cited in numerous educational policy documents and has influenced assessment practices in school districts across the country. The framework provides a practical structure for educators and administrators to reimagine their approach to student evaluation.&lt;/p&gt;
+&lt;h2 id=&#34;key-contributions&#34;&gt;Key Contributions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Development of a research-validated framework for authentic assessment&lt;/li&gt;
+&lt;li&gt;Analysis of implementation challenges and success factors across diverse educational contexts&lt;/li&gt;
+&lt;li&gt;Practical guidelines for transitioning from traditional testing to authentic assessment&lt;/li&gt;
+&lt;li&gt;Tools for measuring the impact of assessment reform on student learning outcomes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The paper concludes with recommendations for educational policymakers and teacher education programs to better support assessment practices that enhance learning.&lt;/p&gt;
 </description>
     </item>
     

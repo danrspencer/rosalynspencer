@@ -5,8 +5,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 65  # Order that this section will appear.
 
-title = "Projects"
-subtitle = "ALL THINGS ARE DIFFICULT BEFORE THEY ARE EASY"
+title = "Writing"
+subtitle = "ARTICLES AND PUBLICATIONS"
 
 [content]
   # Page type to display. E.g. project.
@@ -26,20 +26,16 @@ subtitle = "ALL THINGS ARE DIFFICULT BEFORE THEY ARE EASY"
     tag = "*"
   
   [[content.filter_button]]
-    name = "Deep Learning"
-    tag = "Deep Learning"
+    name = "Small Schools"
+    tag = "small-schools"
   
   [[content.filter_button]]
-    name = "Other"
-    tag = "Demo"
+    name = "Education"
+    tag = "education"
   
   [[content.filter_button]]
-    name = "Human"
-    tag = "human"
-  
-  [[content.filter_button]]
-    name = "Robotics"
-    tag = "robotics"
+    name = "Research"
+    tag = "research"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
