@@ -2,66 +2,96 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:53445/authors/admin/</loc>
+    <loc>http://localhost:54094/authors/admin/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/publication_types/5/</loc>
+    <loc>http://localhost:54094/publication_types/5/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/tags/alternative-education/</loc>
+    <loc>http://localhost:54094/tags/alternative-education/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/authors/</loc>
+    <loc>http://localhost:54094/authors/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/tags/education/</loc>
+    <loc>http://localhost:54094/tags/education/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/project/</loc>
+    <loc>http://localhost:54094/project/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/publication_types/</loc>
+    <loc>http://localhost:54094/publication_types/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/publication/</loc>
+    <loc>http://localhost:54094/publication/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/</loc>
+    <loc>http://localhost:54094/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/tags/small-schools/</loc>
+    <loc>http://localhost:54094/tags/small-schools/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/tags/</loc>
+    <loc>http://localhost:54094/tags/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/project/small-school-book/</loc>
+    <loc>http://localhost:54094/project/small-school-book/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/publication/small-school-book/</loc>
+    <loc>http://localhost:54094/publication/small-school-book/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/project/small-is-beautiful/</loc>
+    <loc>http://localhost:54094/project/earth-matters/</loc>
     <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/privacy/</loc>
+    <loc>http://localhost:54094/tags/nursery-world/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:54094/project/small-is-beautiful/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:54094/privacy/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/project/home-schooling-research/</loc>
+    <loc>http://localhost:54094/project/feeling-special/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/tags/research/</loc>
+    <loc>http://localhost:54094/project/home-schooling-research/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/project/small-schools-case-studies/</loc>
+    <loc>http://localhost:54094/tags/home-education/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:54094/tags/research/</loc>
+    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:54094/project/class-of-their-own/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/categories/</loc>
+    <loc>http://localhost:54094/tags/human-scale/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/courses/</loc>
+    <loc>http://localhost:54094/project/small-schools-case-studies/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/post/</loc>
+    <loc>http://localhost:54094/project/trip-to-denmark/</loc>
+    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:53445/talk/</loc>
+    <loc>http://localhost:54094/project/keeping-calm/</loc>
+    <lastmod>2015-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:54094/project/lessons-small-world/</loc>
+    <lastmod>2014-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:54094/project/why-started-own-school/</loc>
+    <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:54094/categories/</loc>
+  </url><url>
+    <loc>http://localhost:54094/courses/</loc>
+  </url><url>
+    <loc>http://localhost:54094/post/</loc>
+  </url><url>
+    <loc>http://localhost:54094/talk/</loc>
   </url>
 </urlset>

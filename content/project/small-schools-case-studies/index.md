@@ -1,9 +1,10 @@
 ---
 title: "Small Schools - Two Case Studies"
-summary: "In-depth case studies of two small schools, examining their approaches, challenges, and successes."
+summary: "Dame Catherine's was set up to run democratically. The school could not have survived and thrived the way it has without the enthusiastic support of its parents."
 tags:
 - small-schools
 - research
+- human-scale
 date: "2017-01-01T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).

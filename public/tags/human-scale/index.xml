@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Human-Scale on Rosalyn Spencer</title>
+    <link>http://localhost:54094/tags/human-scale/</link>
+    <description>Recent content in Human-Scale on Rosalyn Spencer</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; {year} Rosalyn Spencer</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="http://localhost:54094/tags/human-scale/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Small Schools - Two Case Studies</title>
+      <link>http://localhost:54094/project/small-schools-case-studies/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:54094/project/small-schools-case-studies/</guid>
+      <description>&lt;p&gt;This detailed case study examines two small schools, providing an in-depth look at their educational philosophies, teaching approaches, organizational structures, and community impact.&lt;/p&gt;
+&lt;p&gt;Drawing from my extensive research during my journey visiting fifteen small schools affiliated with Human Scale Education, these case studies highlight the distinctive characteristics that make small schools effective learning environments. The paper discusses how these schools address the individual needs of their students, create supportive community atmospheres, and navigate the challenges of operating outside mainstream educational systems.&lt;/p&gt;
+&lt;p&gt;The research compares different models of small school education while identifying common factors that contribute to their success. It also considers the implications for broader educational policy and practice, suggesting how elements from small schools might inform improvements in mainstream education.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My Trip to Denmark</title>
+      <link>http://localhost:54094/project/trip-to-denmark/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:54094/project/trip-to-denmark/</guid>
+      <description>&lt;p&gt;Published in Human Scale Education.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;One of the greatest differences between English and Danish schooling is that of mutual trust and respect between pupils and teachers.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;This article shares insights from Rosalyn&amp;rsquo;s educational research trip to Denmark, highlighting the distinctive features of the Danish education system. It particularly focuses on the foundation of mutual trust and respect that characterizes the relationship between students and teachers in Danish schools, contrasting this with educational approaches in England.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
