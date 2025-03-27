@@ -13,11 +13,13 @@ marketing:
   seo:
     site_type: Person
     local_business_type: ''
-    org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
-    twitter: 'GetResearchDev'
+    org_name: 'Rosalyn Spencer'
+    description: 'Personal website of Rosalyn Spencer - Education Specialist & Author'
+    twitter: ''
   analytics:
-    google_analytics: ''
+    google_analytics: ''  # Explicitly set to empty
+    google_tag_manager: ''
+    microsoft_clarity: ''
     baidu_tongji: ''
     plausible: ''
     fathom: ''
@@ -30,31 +32,56 @@ marketing:
 header:
   navbar:
     enable: true
-    blox: "navbar"
+    blox: navbar
     fixed_to_top: true
-    show_search: true
-    show_theme_chooser: true
+    show_search: false
+    show_theme_chooser: false
     logo:
       text: "Rosalyn Spencer"
 
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} Rosalyn Spencer. All rights reserved.'
     license:
-      enable: true
-      allow_derivatives: false
-      share_alike: true
-      allow_commercial: false
+      enable: false
 
 # Localization
 locale:
-  date_format: 'Jan 2, 2006'
+  date_format: '2 Jan 2006'
   time_format: '3:04 PM'
+
+# Contact (edit or remove options as required)
+email: rosalyn@spencer-johnson.co.uk
+phone: +44 7979 793677
+address:
+  country: United Kingdom
+  country_code: UK
 
 # Site features
 features:
+  syntax_highlighter:
+    theme_light: github-light
+    theme_dark: dracula
   math:
     enable: false
   privacy_pack:
     enable: false
+  repository:
+    url: ''
+  avatar:
+    gravatar: false
+    shape: circle
+  comment:
+    provider: ''
+  search:
+    provider: wowchemy
+    algolia:
+      app_id: ''
+      api_key: ''
+      index_name: ''
+      show_logo: false
+  map:
+    provider: ''
+    api_key: ''
+    zoom: 15

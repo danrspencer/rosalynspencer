@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Independent Schools | Rosalyn Spencer</title>
+    <link>http://localhost:1313/tags/independent-schools/</link>
+      <atom:link href="http://localhost:1313/tags/independent-schools/index.xml" rel="self" type="application/rss+xml" />
+    <description>Independent Schools</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu7729264130191091259.png</url>
+      <title>Independent Schools</title>
+      <link>http://localhost:1313/tags/independent-schools/</link>
+    </image>
+    
+    <item>
+      <title>Lessons from a Small World</title>
+      <link>http://localhost:1313/publication/lessons-from-a-small-world/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/lessons-from-a-small-world/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
