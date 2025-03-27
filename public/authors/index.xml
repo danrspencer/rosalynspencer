@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Rosalyn Spencer</title>
+    <link>http://localhost:1313/authors/</link>
+    <description>Recent content in Authors on Rosalyn Spencer</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; {year} Rosalyn Spencer</copyright>
+    <lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="http://localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/authors/admin/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/authors/admin/</guid>
+      <description>&lt;p&gt;Rosalyn Spencer is an academic researcher specializing in education and curriculum development. Her research focuses on innovative teaching methods and educational policy reform.&lt;/p&gt;
+&lt;p&gt;With over 10 years of experience in the education sector, Rosalyn has contributed to numerous publications and projects aimed at improving educational outcomes and teaching practices.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Robert Ford</title>
+      <link>http://localhost:1313/authors/robert-ford/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/authors/robert-ford/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
