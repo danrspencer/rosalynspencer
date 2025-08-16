@@ -53,7 +53,7 @@ time_format = "3:04 PM"
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "rosalyn.spencer@example.com"
+email = "info@rosalynspencer.co.uk"
 phone = ""
 address = "London, United Kingdom"
 
@@ -76,7 +76,7 @@ contact_links = [
 # Display a map.
 # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
 # a map provider below.
-# To use Google Maps, set `map = 1` and enter your API key that can be obtained here:
+# To use Google Maps, set `map = 0` and enter your API key that can be obtained here:
 #   https://developers.google.com/maps/documentation/javascript/get-api-key
 # To use OpenStreetMap tiles, set `map = 2`.
 # To use OpenStreetMap on a high traffic site, set `map = 3` and enter your API key that can be obtained here:
@@ -88,10 +88,10 @@ contact_links = [
 #   1: Google Maps
 #   2: OpenStreetMap (Mapnik)
 #   3: OpenStreetMap (Mapbox)
-map = 2
-map_api_key = "AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"
-latitude = "37.4275"
-longitude = "-122.1697"
+map = 0
+map_api_key = ""
+latitude = ""
+longitude = ""
 zoom = 15
 
 ############################

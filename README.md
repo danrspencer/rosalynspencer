@@ -13,7 +13,10 @@ hugo server -D
 
 The site will be available at `http://localhost:1313/`.
 
+<<<<<<< HEAD
 
 ## Deployment
 
 Commits to the `main` branch are automatically built and published to GitHub Pages via GitHub Actions.
+=======
+>>>>>>> 7328fb2 (Add Academia theme and clean up config)
