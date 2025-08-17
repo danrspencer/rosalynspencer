@@ -29,7 +29,10 @@ jobs:
           extended: true
 
       - name: Build site
-        run: hugo --minify
+        run: |
+          hugo --baseURL "https://danrspencer.github.io/rosalynspencer/" --minify
+          echo "Listing public directory contents for troubleshooting:"
+          ls -l ./public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
