@@ -13,3 +13,7 @@ hugo server -D
 
 The site will be available at `http://localhost:1313/`.
 
+
+## Deployment
+
+Commits to the `main` branch are automatically built and published to GitHub Pages via GitHub Actions.
