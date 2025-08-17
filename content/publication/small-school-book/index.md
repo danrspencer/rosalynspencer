@@ -68,3 +68,24 @@ slides: ""
 The narrative draws from my diverse experiences including working with struggling students, teenagers in care, running a children's nursery, home educating my own children, and ultimately establishing a small school. It chronicles the challenges, rewards, and lessons learned throughout this journey.
 
 The book reflects my belief in the importance of educational environments that recognize and nurture each child's unique potential, providing a practical perspective on how small-scale, personalized education can make a profound difference in children's lives. 
+
+---
+
+## Book Reviews
+
+"A powerful story of transformation in education. I recommend this book to all educators wholeheartedly."
+— Satish Kumar: Editor-in-Chief of Resurgence & Ecologist; Founder of The Small School, Hartland
+
+"Rosalyn Spencer’s personal and compelling narrative about her battle to establish a new type of school two decades ago marks her out as an innovator ahead of her time."
+— Tony Breslin, Chair, Human Scale Education
+
+"Rosalyn’s courageous establishment was a much-needed exemplar of change in education-provision, in what is now, a socio-ecologically fragmenting Britain."
+— Stuart McBurney, Author, Ecology into Economics Won’t Go
+
+## Inspirational Quotes
+
+"The greatest achievement was at first and for a time a dream. The oak sleeps in the acorn, the bird waits in the egg, and the highest vision of the soul a waking angel stirs. Dreams are seedlings of realities."
+— James Allen
+
+"Everybody has intelligence ... It's just a matter of finding the right door ... and then finding the right key to unlock it!"
+— Professor Tim Brickhouse
