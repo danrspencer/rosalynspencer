@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",
     "image-size": "^2.0.2",
+    "justified-layout": "^4.1.0",
     "photoswipe": "^5.4.4",
     "tailwindcss": "^4.2.1"
   }

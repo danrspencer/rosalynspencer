@@ -14,7 +14,7 @@ interface Props {
 
 const { images } = Astro.props;
 
-// Read actual pixel dimensions at build time so PhotoSwipe can open at full size
+// Read actual pixel dimensions at build time for PhotoSwipe + justified layout
 const imagesWithDimensions = images.map(({ src, alt }) => {
   const filepath = join(process.cwd(), 'public', src.replace(/^\//, ''));
   const buf = readFileSync(filepath);
@@ -23,39 +23,84 @@ const imagesWithDimensions = images.map(({ src, alt }) => {
 });
 ---
 
-<!-- Masonry grid — CSS columns preserves each image's natural aspect ratio -->
-<div id="gallery" class="columns-2 md:columns-3 gap-3">
+<!--
+  Justified row layout (Flickr/Google Photos style):
+  Each row is the same height, widths vary to fill the container.
+  JavaScript computes the layout client-side using the real image dimensions.
+-->
+<div id="gallery" class="relative w-full">
   {imagesWithDimensions.map(({ src, alt, width, height }) => (
     <a
       href={src}
       data-pswp-width={width}
       data-pswp-height={height}
-      target="_blank"
-      rel="noreferrer"
-      class="block break-inside-avoid mb-3 rounded-xl overflow-hidden group"
+      data-w={width}
+      data-h={height}
+      class="absolute overflow-hidden rounded-lg group cursor-zoom-in"
     >
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        class="w-full group-hover:opacity-90 transition-opacity cursor-zoom-in"
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
       />
     </a>
   ))}
 </div>
 
-<style>
+<style is:global>
   @import 'photoswipe/dist/photoswipe.css';
 </style>
 
 <script>
   import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  // @ts-ignore — justified-layout is a CJS module, no types package needed
+  import justifiedLayout from 'justified-layout';
 
+  const container = document.getElementById('gallery')!;
+
+  function layoutGallery() {
+    const items = Array.from(container.querySelectorAll<HTMLElement>('a[data-w]'));
+    const dims = items.map(el => ({
+      width: parseInt(el.dataset.w!),
+      height: parseInt(el.dataset.h!),
+    }));
+
+    const containerWidth = container.offsetWidth;
+    const geometry = justifiedLayout(dims, {
+      containerWidth,
+      targetRowHeight: 230,
+      targetRowHeightTolerance: 0.2,
+      boxSpacing: { horizontal: 8, vertical: 8 },
+      containerPadding: 0,
+    });
+
+    container.style.height = geometry.containerHeight + 'px';
+
+    items.forEach((el, i) => {
+      const box = geometry.boxes[i];
+      el.style.left   = box.left + 'px';
+      el.style.top    = box.top + 'px';
+      el.style.width  = box.width + 'px';
+      el.style.height = box.height + 'px';
+    });
+  }
+
+  layoutGallery();
+
+  // Re-layout on resize (debounced)
+  let resizeTimer: ReturnType<typeof setTimeout>;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(layoutGallery, 150);
+  });
+
+  // PhotoSwipe lightbox — no target="_blank" needed, PhotoSwipe intercepts clicks
   const lightbox = new PhotoSwipeLightbox({
     gallery: '#gallery',
     children: 'a[data-pswp-width]',
     pswpModule: () => import('photoswipe'),
-    bgOpacity: 0.92,
+    bgOpacity: 0.93,
     padding: { top: 20, bottom: 20, left: 20, right: 20 },
   });
 
