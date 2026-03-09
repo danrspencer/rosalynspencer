@@ -1,4 +1,6 @@
 ---
+import { AUTHOR_URL, RETREAT_URL } from '../config';
+
 interface Props {
   section?: 'author' | 'retreat';
 }
@@ -6,34 +8,53 @@ interface Props {
 const { section = 'author' } = Astro.props;
 const isRetreat = section === 'retreat';
 
-const navLinks = [
-  { href: '/',        label: 'Home',     side: 'author'  },
-  { href: '/about',   label: 'About',    side: 'author'  },
-  { href: '/book',    label: 'Book',     side: 'author'  },
-  { href: '/writing', label: 'Articles', side: 'author'  },
-  { href: '/retreat', label: 'Retreat',  side: 'retreat' },
-  { href: '/contact', label: 'Contact',  side: 'shared'  },
-  { href: '/links',   label: 'Links',    side: 'shared'  },
-];
-
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
-// Accent colours: retreat uses forest green, author uses sage
-const activeClass   = isRetreat ? 'text-forest font-medium' : 'text-sage font-medium';
-const hoverClass    = isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage';
-const wordmarkHover = isRetreat ? 'group-hover:text-forest' : 'group-hover:text-sage';
+// Main nav links for each section (same-site relative links)
+const mainLinks = isRetreat
+  ? [
+      { href: `${RETREAT_URL}`,         label: 'Retreat' },
+      { href: `${RETREAT_URL}/contact`, label: 'Contact' },
+      { href: `${RETREAT_URL}/links`,   label: 'Links'   },
+    ]
+  : [
+      { href: '/',        label: 'Home'     },
+      { href: '/about',   label: 'About'    },
+      { href: '/book',    label: 'Book'     },
+      { href: '/writing', label: 'Articles' },
+      { href: '/contact', label: 'Contact'  },
+      { href: '/links',   label: 'Links'    },
+    ];
 
-// Wordmark: on retreat pages flip primary/secondary
-const wordmarkHref    = isRetreat ? '/retreat' : '/';
+// Cross-section gateway link
+const crossLink = isRetreat
+  ? { href: `${AUTHOR_URL}/`,   label: '\u2190 Writing' }
+  : { href: `${RETREAT_URL}`,   label: 'Retreat \u2192' };
+
+// Accent colours
+const activeClass    = isRetreat ? 'text-forest font-medium' : 'text-sage font-medium';
+const hoverClass     = isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage';
+const crossHover     = isRetreat ? 'text-warm-400 hover:text-forest' : 'text-warm-400 hover:text-sage';
+
+// Wordmark
+const wordmarkHref    = isRetreat ? `${RETREAT_URL}` : '/';
 const wordmarkPrimary = isRetreat ? "Longthwaite Writers\u2019 Retreat" : 'Rosalyn Spencer';
 const wordmarkSub     = isRetreat ? 'Rosalyn Spencer' : 'Author & Writing Retreat Host';
+const wordmarkColour  = isRetreat ? 'text-forest' : 'text-ink';
+const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hover:text-sage';
 ---
 
-<header class="sticky top-0 z-50 bg-parchment/95 backdrop-blur-sm border-b border-warm-200">
+<header class:list={[
+  'sticky top-0 z-50 backdrop-blur-sm',
+  isRetreat ? 'border-b border-forest/30 bg-parchment/95' : 'border-b border-warm-200 bg-parchment/95',
+]}>
+  <!-- Retreat accent strip -->
+  {isRetreat && <div class="h-0.5 bg-forest" />}
+
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
     <!-- Wordmark -->
-    <a href={wordmarkHref} class="flex flex-col leading-tight group">
-      <span class:list={['font-serif text-2xl font-semibold text-ink transition-colors', wordmarkHover]}>
+    <a href={wordmarkHref} class="flex flex-col leading-tight group shrink-0">
+      <span class:list={['font-serif text-2xl font-semibold transition-colors', wordmarkColour, wordmarkHover]}>
         {wordmarkPrimary}
       </span>
       <span class="font-sans text-xs text-warm-400 tracking-wide">
@@ -43,31 +64,33 @@ const wordmarkSub     = isRetreat ? 'Rosalyn Spencer' : 'Author & Writing Retrea
 
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-1">
-      {navLinks.map(({ href, label, side }, i) => {
-        const isActive = href === '/'
-          ? currentPath === '/'
-          : currentPath.startsWith(href);
-
-        // Visual divider before 'Retreat'
-        const showDivider = side === 'retreat' && navLinks[i - 1]?.side === 'author';
-
+      {mainLinks.map(({ href, label }) => {
+        const isActive = href === '/' || href === RETREAT_URL
+          ? currentPath === '/' || currentPath === '/retreat'
+          : currentPath.startsWith(href.replace(RETREAT_URL, '') || href);
         return (
-          <>
-            {showDivider && (
-              <span class="w-px h-4 bg-warm-200 mx-2" aria-hidden="true" />
-            )}
-            <a
-              href={href}
-              class:list={[
-                'font-sans text-sm tracking-wide transition-colors px-2 py-1',
-                isActive ? activeClass : hoverClass
-              ]}
-            >
-              {label}
-            </a>
-          </>
+          <a
+            href={href}
+            class:list={[
+              'font-sans text-sm tracking-wide transition-colors px-2 py-1',
+              isActive ? activeClass : hoverClass,
+            ]}
+          >
+            {label}
+          </a>
         );
       })}
+
+      <!-- Pipe divider -->
+      <span class="w-px h-4 bg-warm-200 mx-2" aria-hidden="true" />
+
+      <!-- Cross-section gateway -->
+      <a
+        href={crossLink.href}
+        class:list={['font-serif italic text-sm transition-colors px-2 py-1', crossHover]}
+      >
+        {crossLink.label}
+      </a>
     </nav>
 
     <!-- Mobile menu toggle -->
@@ -87,28 +110,34 @@ const wordmarkSub     = isRetreat ? 'Rosalyn Spencer' : 'Author & Writing Retrea
   </div>
 
   <!-- Mobile nav -->
-  <nav id="mobile-menu" class="hidden md:hidden border-t border-warm-200 bg-parchment">
+  <nav id="mobile-menu" class:list={[
+    'hidden md:hidden border-t bg-parchment',
+    isRetreat ? 'border-forest/30' : 'border-warm-200',
+  ]}>
     <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-1">
-      {navLinks.map(({ href, label, side }, i) => {
-        const isActive = href === '/'
-          ? currentPath === '/'
-          : currentPath.startsWith(href);
-        const showDivider = side === 'retreat' && navLinks[i - 1]?.side === 'author';
+      {mainLinks.map(({ href, label }) => {
+        const isActive = href === '/' || href === RETREAT_URL
+          ? currentPath === '/' || currentPath === '/retreat'
+          : currentPath.startsWith(href.replace(RETREAT_URL, '') || href);
         return (
-          <>
-            {showDivider && <hr class="border-warm-200 my-1" />}
-            <a
-              href={href}
-              class:list={[
-                'font-sans text-sm tracking-wide transition-colors py-1',
-                isActive ? activeClass : hoverClass
-              ]}
-            >
-              {label}
-            </a>
-          </>
+          <a
+            href={href}
+            class:list={[
+              'font-sans text-sm tracking-wide transition-colors py-1',
+              isActive ? activeClass : hoverClass,
+            ]}
+          >
+            {label}
+          </a>
         );
       })}
+      <hr class:list={['my-1', isRetreat ? 'border-forest/20' : 'border-warm-200']} />
+      <a
+        href={crossLink.href}
+        class:list={['font-serif italic text-sm transition-colors py-1', crossHover]}
+      >
+        {crossLink.label}
+      </a>
     </div>
   </nav>
 </header>
