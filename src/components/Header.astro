@@ -19,21 +19,25 @@ const navLinks = [
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
 // Accent colours: retreat uses forest green, author uses sage
-const activeClass  = isRetreat ? 'text-forest font-medium' : 'text-sage font-medium';
-const hoverClass   = isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage';
+const activeClass   = isRetreat ? 'text-forest font-medium' : 'text-sage font-medium';
+const hoverClass    = isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage';
 const wordmarkHover = isRetreat ? 'group-hover:text-forest' : 'group-hover:text-sage';
-const subtitle     = isRetreat ? 'Longthwaite Writers\' Retreat' : 'Author & Writing Retreat Host';
+
+// Wordmark: on retreat pages flip primary/secondary
+const wordmarkHref    = isRetreat ? '/retreat' : '/';
+const wordmarkPrimary = isRetreat ? "Longthwaite Writers\u2019 Retreat" : 'Rosalyn Spencer';
+const wordmarkSub     = isRetreat ? 'Rosalyn Spencer' : 'Author & Writing Retreat Host';
 ---
 
 <header class="sticky top-0 z-50 bg-parchment/95 backdrop-blur-sm border-b border-warm-200">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
     <!-- Wordmark -->
-    <a href="/" class="flex flex-col leading-tight group">
+    <a href={wordmarkHref} class="flex flex-col leading-tight group">
       <span class:list={['font-serif text-2xl font-semibold text-ink transition-colors', wordmarkHover]}>
-        Rosalyn Spencer
+        {wordmarkPrimary}
       </span>
       <span class="font-sans text-xs text-warm-400 tracking-wide">
-        {subtitle}
+        {wordmarkSub}
       </span>
     </a>
 

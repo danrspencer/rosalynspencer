@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:rosalynspencer.co.uk)"
+      "WebFetch(domain:rosalynspencer.co.uk)",
+      "Bash(git add src/pages/index.astro)",
+      "Bash(git commit -m \"Fix book title link styling on homepage\")",
+      "Bash(git push origin main)",
+      "Bash(~/.local/bin/mise exec -- node node_modules/.bin/astro build)"
     ]
   }
 }
