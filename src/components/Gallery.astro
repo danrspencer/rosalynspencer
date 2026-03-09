@@ -1,0 +1,63 @@
+---
+import { imageSize } from 'image-size';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+interface GalleryImage {
+  src: string;   // e.g. '/images/gallery/01.jpg'
+  alt: string;
+}
+
+interface Props {
+  images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+
+// Read actual pixel dimensions at build time so PhotoSwipe can open at full size
+const imagesWithDimensions = images.map(({ src, alt }) => {
+  const filepath = join(process.cwd(), 'public', src.replace(/^\//, ''));
+  const buf = readFileSync(filepath);
+  const { width, height } = imageSize(buf);
+  return { src, alt, width: width!, height: height! };
+});
+---
+
+<!-- Masonry grid — CSS columns preserves each image's natural aspect ratio -->
+<div id="gallery" class="columns-2 md:columns-3 gap-3">
+  {imagesWithDimensions.map(({ src, alt, width, height }) => (
+    <a
+      href={src}
+      data-pswp-width={width}
+      data-pswp-height={height}
+      target="_blank"
+      rel="noreferrer"
+      class="block break-inside-avoid mb-3 rounded-xl overflow-hidden group"
+    >
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        class="w-full group-hover:opacity-90 transition-opacity cursor-zoom-in"
+      />
+    </a>
+  ))}
+</div>
+
+<style>
+  @import 'photoswipe/dist/photoswipe.css';
+</style>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a[data-pswp-width]',
+    pswpModule: () => import('photoswipe'),
+    bgOpacity: 0.92,
+    padding: { top: 20, bottom: 20, left: 20, right: 20 },
+  });
+
+  lightbox.init();
+</script>
