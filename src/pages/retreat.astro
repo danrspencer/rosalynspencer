@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RetreatCard from '../components/RetreatCard.astro';
 import Gallery from '../components/Gallery.astro';
+import { RETREAT_URL } from '../config';
 
 const groupRetreats2026 = [
   { dates: '27–29 March',     title: 'Maintaining Motivation for Writing', price: '£210', duration: '3 days' },
@@ -68,7 +69,7 @@ const galleryImages = [
   <section class="max-w-5xl mx-auto px-6 pb-16">
     <Gallery images={galleryImages} />
     <p class="font-sans text-sm text-warm-400 text-center mt-6">
-      Please <a href="/contact" class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">get in touch</a> to arrange a visit.
+      Please <a href={`${RETREAT_URL}/contact`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">get in touch</a> to arrange a visit.
     </p>
   </section>
 
@@ -99,9 +100,15 @@ const galleryImages = [
     </div>
 
     <div class="bg-white/60 rounded-2xl border border-warm-200 px-6 py-2 mb-6">
-      {groupRetreats2026.map((r) => (
-        <RetreatCard dates={r.dates} title={r.title} price={r.price} duration={r.duration} />
-      ))}
+      {groupRetreats2026.map((r) => {
+        const message = `Hi, I'm interested in attending the '${r.title}' retreat (${r.dates} 2026).
+
+Number of attendees:
+Accommodation needed (£40–£50/night):
+Any questions or special requirements:`;
+        const href = `${RETREAT_URL}/contact?message=${encodeURIComponent(message)}`;
+        return <RetreatCard dates={r.dates} title={r.title} price={r.price} duration={r.duration} href={href} />;
+      })}
     </div>
 
     <div class="font-sans text-sm text-warm-400 space-y-1">
@@ -211,7 +218,7 @@ const galleryImages = [
       Get in touch with Rosalyn and Ian to discuss dates, availability, and anything else you&rsquo;d like to know.
     </p>
     <a
-      href="/contact"
+      href={`${RETREAT_URL}/contact`}
       class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
     >
       Get in Touch
