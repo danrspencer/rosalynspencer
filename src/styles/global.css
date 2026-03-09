@@ -16,6 +16,12 @@
   --color-warm-200:       #D4C4B8;
   --color-warm-400:       #9C8070;
 
+  /* Retreat accent — forest green */
+  --color-forest:         #3D6B47;
+  --color-forest-light:   #6B9E7A;
+  --color-forest-pale:    #C8DDD0;
+  --color-forest-dark:    #1E3D27;
+
   /* Fonts */
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans:  "Inter", system-ui, sans-serif;

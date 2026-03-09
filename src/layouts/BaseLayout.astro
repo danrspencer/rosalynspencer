@@ -6,9 +6,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  section?: 'author' | 'retreat';
 }
 
-const { title, description = 'Rosalyn Spencer — Author of Why I Started a Small School, and host of Longthwaite Writers\' Retreat in Cumbria.' } = Astro.props;
+const { title, description = 'Rosalyn Spencer — Author of Why I Started a Small School, and host of Longthwaite Writers\' Retreat in Cumbria.', section = 'author' } = Astro.props;
 const fullTitle = title === 'Home' ? 'Rosalyn Spencer' : `${title} | Rosalyn Spencer`;
 ---
 
@@ -29,7 +30,7 @@ const fullTitle = title === 'Home' ? 'Rosalyn Spencer' : `${title} | Rosalyn Spe
     />
   </head>
   <body class="font-sans text-ink bg-parchment antialiased">
-    <Header />
+    <Header section={section} />
     <main>
       <slot />
     </main>

@@ -1,47 +1,67 @@
 ---
+interface Props {
+  section?: 'author' | 'retreat';
+}
+
+const { section = 'author' } = Astro.props;
+const isRetreat = section === 'retreat';
+
 const navLinks = [
-  { href: '/',        label: 'Home'    },
-  { href: '/about',   label: 'About'   },
-  { href: '/book',    label: 'Book'    },
-  { href: '/writing', label: 'Articles'},
-  { href: '/retreat', label: 'Retreat' },
-  { href: '/contact', label: 'Contact' },
-  { href: '/links',   label: 'Links'   },
+  { href: '/',        label: 'Home',     side: 'author'  },
+  { href: '/about',   label: 'About',    side: 'author'  },
+  { href: '/book',    label: 'Book',     side: 'author'  },
+  { href: '/writing', label: 'Articles', side: 'author'  },
+  { href: '/retreat', label: 'Retreat',  side: 'retreat' },
+  { href: '/contact', label: 'Contact',  side: 'shared'  },
+  { href: '/links',   label: 'Links',    side: 'shared'  },
 ];
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+// Accent colours: retreat uses forest green, author uses sage
+const activeClass  = isRetreat ? 'text-forest font-medium' : 'text-sage font-medium';
+const hoverClass   = isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage';
+const wordmarkHover = isRetreat ? 'group-hover:text-forest' : 'group-hover:text-sage';
+const subtitle     = isRetreat ? 'Longthwaite Writers\' Retreat' : 'Author & Writing Retreat Host';
 ---
 
 <header class="sticky top-0 z-50 bg-parchment/95 backdrop-blur-sm border-b border-warm-200">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
     <!-- Wordmark -->
     <a href="/" class="flex flex-col leading-tight group">
-      <span class="font-serif text-2xl font-semibold text-ink group-hover:text-sage transition-colors">
+      <span class:list={['font-serif text-2xl font-semibold text-ink transition-colors', wordmarkHover]}>
         Rosalyn Spencer
       </span>
       <span class="font-sans text-xs text-warm-400 tracking-wide">
-        Author &amp; Writing Retreat Host
+        {subtitle}
       </span>
     </a>
 
     <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6">
-      {navLinks.map(({ href, label }) => {
+    <nav class="hidden md:flex items-center gap-1">
+      {navLinks.map(({ href, label, side }, i) => {
         const isActive = href === '/'
           ? currentPath === '/'
           : currentPath.startsWith(href);
+
+        // Visual divider before 'Retreat'
+        const showDivider = side === 'retreat' && navLinks[i - 1]?.side === 'author';
+
         return (
-          <a
-            href={href}
-            class:list={[
-              'font-sans text-sm tracking-wide transition-colors',
-              isActive
-                ? 'text-sage font-medium'
-                : 'text-ink-light hover:text-sage'
-            ]}
-          >
-            {label}
-          </a>
+          <>
+            {showDivider && (
+              <span class="w-px h-4 bg-warm-200 mx-2" aria-hidden="true" />
+            )}
+            <a
+              href={href}
+              class:list={[
+                'font-sans text-sm tracking-wide transition-colors px-2 py-1',
+                isActive ? activeClass : hoverClass
+              ]}
+            >
+              {label}
+            </a>
+          </>
         );
       })}
     </nav>
@@ -49,7 +69,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <!-- Mobile menu toggle -->
     <button
       id="menu-toggle"
-      class="md:hidden p-2 text-ink-light hover:text-sage transition-colors"
+      class:list={['md:hidden p-2 transition-colors', isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage']}
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -64,23 +84,25 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
   <!-- Mobile nav -->
   <nav id="mobile-menu" class="hidden md:hidden border-t border-warm-200 bg-parchment">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-4">
-      {navLinks.map(({ href, label }) => {
+    <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-1">
+      {navLinks.map(({ href, label, side }, i) => {
         const isActive = href === '/'
           ? currentPath === '/'
           : currentPath.startsWith(href);
+        const showDivider = side === 'retreat' && navLinks[i - 1]?.side === 'author';
         return (
-          <a
-            href={href}
-            class:list={[
-              'font-sans text-sm tracking-wide transition-colors',
-              isActive
-                ? 'text-sage font-medium'
-                : 'text-ink-light hover:text-sage'
-            ]}
-          >
-            {label}
-          </a>
+          <>
+            {showDivider && <hr class="border-warm-200 my-1" />}
+            <a
+              href={href}
+              class:list={[
+                'font-sans text-sm tracking-wide transition-colors py-1',
+                isActive ? activeClass : hoverClass
+              ]}
+            >
+              {label}
+            </a>
+          </>
         );
       })}
     </div>
