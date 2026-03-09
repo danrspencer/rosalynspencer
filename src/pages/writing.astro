@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const articles = [
+  {
+    publication: 'The Green Parent',
+    title: 'Small Is Beautiful',
+    excerpt: 'In 1982 a small non-fee paying secondary school serving the rural community of Hartland, Devon, and the outlying villages, opened its doors for the very first time.',
+  },
+  {
+    publication: 'Nursery World',
+    title: 'Earth Matters',
+    excerpt: 'The case for an environmentally aware form of education for children in the face of climate change.',
+  },
+  {
+    publication: 'Nursery World',
+    title: 'Feeling Special',
+    excerpt: 'Nurture Groups are based within mainstream settings and care for up to 12 children aged four to seven who have emotional and behavioural problems.',
+  },
+  {
+    publication: 'Nursery World',
+    title: 'Class of Their Own',
+    excerpt: 'A growing number of families are choosing to educate their children at home, for a variety of reasons.',
+  },
+  {
+    publication: 'Human Scale Education',
+    title: 'My Trip to Denmark',
+    excerpt: 'One of the greatest differences between English and Danish schooling is that of mutual trust and respect between pupils and teachers.',
+  },
+  {
+    publication: 'Nursery World',
+    title: 'The Dharma School',
+    excerpt: 'The Dharma School in Brighton is the first primary school in the UK to be based on Buddhist principles.',
+  },
+];
+---
+
+<BaseLayout
+  title="Articles"
+  description="Articles and writing by Rosalyn Spencer, published in The Green Parent, Nursery World, Human Scale Education and more."
+>
+
+  <div class="max-w-4xl mx-auto px-6 pt-20 pb-24">
+    <h1 class="font-serif text-5xl font-semibold text-ink mb-4">Articles</h1>
+    <p class="font-sans text-warm-400 text-lg mb-12">
+      Here are a few articles I've had published&hellip;
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+      {articles.map((article) => (
+        <ArticleCard
+          publication={article.publication}
+          title={article.title}
+          excerpt={article.excerpt}
+        />
+      ))}
+    </div>
+  </div>
+
+</BaseLayout>

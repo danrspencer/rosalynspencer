@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteBlock from '../components/QuoteBlock.astro';
+---
+
+<BaseLayout title="Home" description="Rosalyn Spencer — Author of 'Why I Started a Small School' and host of Longthwaite Writers' Retreat in Cumbria.">
+
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <div class="shrink-0">
+        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-warm-200 shadow-lg">
+          <img
+            src="/images/rosalyn-spencer.jpg"
+            alt="Rosalyn Spencer"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      <div class="text-center md:text-left">
+        <h1 class="font-serif text-5xl md:text-6xl font-semibold text-ink mb-4">
+          Hi — I'm Rosalyn Spencer
+        </h1>
+        <p class="font-sans text-lg text-warm-400 mb-8 leading-relaxed max-w-xl">
+          In my first book <em class="font-serif text-ink"><a href="/book" class="underline decoration-amber/50 hover:decoration-amber transition-colors">'Why I Started a Small School'</a></em> I share my vision with the reader, and tell the true story of how I made some dreams come true.
+        </p>
+        <a
+          href="/book"
+          class="inline-block bg-sage text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-sage-light transition-colors"
+        >
+          Read the Book
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="max-w-5xl mx-auto px-6">
+    <hr class="border-warm-200" />
+  </div>
+
+  <!-- Pull Quotes -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 gap-6">
+      <QuoteBlock
+        quote="Everybody has intelligence… It's just a matter of finding the right door… and then finding the right key to unlock it!"
+        attribution="Professor Tim Brickhouse"
+        variant="amber"
+      />
+      <QuoteBlock
+        quote="The greatest achievement was at first and for a time a dream. The oak sleeps in the acorn, the bird waits in the egg, and the highest vision of the soul a waking angel stirs. Dreams are seedlings of realities."
+        attribution="James Allen"
+        variant="sage"
+      />
+    </div>
+  </section>
+
+  <!-- Book Reviews -->
+  <section class="bg-parchment-dark py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="font-serif text-3xl text-ink mb-10 text-center">What People Are Saying</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            quote: 'A powerful story of transformation in education. I recommend this book to all educators wholeheartedly.',
+            name: 'Satish Kumar',
+            role: 'Editor-in-Chief, Resurgence & Ecologist; Founder of The Small School, Hartland',
+          },
+          {
+            quote: "Rosalyn Spencer's personal and compelling narrative about her battle to establish a new type of school two decades ago marks her out as an innovator ahead of her time.",
+            name: 'Tony Breslin',
+            role: 'Chair, Human Scale Education',
+          },
+          {
+            quote: "Rosalyn's courageous establishment was a much-needed exemplar of change in education-provision, in what is now, a socio-ecologically fragmenting Britain.",
+            name: 'Stuart McBurney',
+            role: "Author, Ecology into Economics Won't Go",
+          },
+        ].map(({ quote, name, role }) => (
+          <div class="flex flex-col gap-3">
+            <p class="font-serif italic text-ink-light leading-relaxed">&ldquo;{quote}&rdquo;</p>
+            <div>
+              <p class="font-sans text-sm font-medium text-ink">{name}</p>
+              <p class="font-sans text-xs text-warm-400">{role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/book" class="font-sans text-sm text-sage hover:text-sage-light transition-colors underline decoration-sage/40 hover:decoration-sage">
+          More about the book &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Retreat Teaser -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <div class="bg-sage-pale rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+      <div class="flex-1">
+        <span class="font-sans text-xs font-medium tracking-widest uppercase text-sage">Cumbria, England</span>
+        <h2 class="font-serif text-3xl text-ink mt-2 mb-4">Longthwaite Writers' Retreat</h2>
+        <p class="font-sans text-warm-400 leading-relaxed mb-6">
+          The perfect place to make progress with your writing in peaceful surroundings. A beautifully renovated 300-year-old farmhouse just outside the Lake District National Park.
+        </p>
+        <a
+          href="/retreat"
+          class="inline-block border border-sage text-sage font-sans text-sm font-medium tracking-wide px-6 py-2.5 rounded-full hover:bg-sage hover:text-white transition-colors"
+        >
+          Find Out More
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

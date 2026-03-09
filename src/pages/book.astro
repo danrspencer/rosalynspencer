@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Book"
+  description="Why I Started a Small School by Rosalyn Spencer — Amazon #1 Best Seller. Buy on Amazon (Kindle £3.99 or Paperback £7.99)."
+>
+
+  <!-- Book hero -->
+  <section class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+    <div class="flex flex-col md:flex-row items-start gap-12">
+      <!-- Cover -->
+      <div class="shrink-0 md:w-56">
+        <img
+          src="/images/book-cover.jpg"
+          alt="Why I Started a Small School — book cover"
+          class="w-full rounded-xl shadow-xl"
+        />
+      </div>
+
+      <!-- Details -->
+      <div class="flex-1">
+        <span class="inline-block font-sans text-xs font-medium tracking-widest uppercase text-sage mb-4">
+          First in a series of three
+        </span>
+        <h1 class="font-serif text-4xl md:text-5xl font-semibold text-ink mb-2 leading-tight">
+          Why I Started a Small School
+        </h1>
+        <p class="font-sans text-warm-400 mb-1">by Rosalyn Spencer</p>
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-amber-pale text-amber font-sans text-xs font-medium tracking-wide px-3 py-1.5 rounded-full mt-3 mb-6">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          Amazon #1 Best Seller
+        </div>
+
+        <p class="font-sans text-ink-light leading-relaxed mb-4">
+          A nurturing, human scale approach to education and parenting.
+        </p>
+        <p class="font-sans text-ink-light leading-relaxed mb-6">
+          More than 25 years ago, long before the days of the UK's government funded free schools, Rosalyn Spencer was the driving force behind the setting up of a non-fee paying 'alternative' small school. She had felt compelled to do this, not only because of the difficulties her 9 year old son was facing in mainstream education, and painful memories of her own schooling, but also because of concerns other parents had shared with her about problems their children were experiencing.
+        </p>
+        <p class="font-sans text-ink-light leading-relaxed mb-8">
+          Whereas the current free schools are generously funded by the government, Rosalyn opened the school with 12 children with virtually no funding at all. In this book, the first in a series of three, Rosalyn tells her personal story leading up to the opening of the small school. It demonstrates some of the failings of the education system and highlights the need for alternative approaches. Her story will appeal to childcare professionals, teachers, parents and anybody who enjoys reading memoirs and narrative non-fiction.
+        </p>
+
+        <!-- Buy buttons -->
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="https://www.amazon.co.uk/Why-Started-Small-School/dp/B01N4X6U9Z"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-amber text-white font-sans text-sm font-medium px-6 py-3 rounded-full hover:bg-amber-light transition-colors"
+          >
+            Buy on Amazon — Kindle £3.99
+          </a>
+          <a
+            href="https://www.amazon.co.uk/Why-Started-Small-School/dp/B01N4X6U9Z"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block border border-amber text-amber font-sans text-sm font-medium px-6 py-3 rounded-full hover:bg-amber hover:text-white transition-colors"
+          >
+            Paperback £7.99
+          </a>
+        </div>
+        <p class="font-sans text-xs text-warm-400 mt-3">
+          Paperback also available directly from the author — <a href="/contact" class="underline hover:text-sage transition-colors">get in touch</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-parchment-dark py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-serif text-3xl text-ink mb-10 text-center">Book Reviews</h2>
+      <div class="space-y-8">
+        {[
+          {
+            quote: 'A powerful story of transformation in education. I recommend this book to all educators wholeheartedly.',
+            name: 'Satish Kumar',
+            role: 'Editor-in-Chief of Resurgence & Ecologist; Founder of The Small School, Hartland',
+          },
+          {
+            quote: "Rosalyn Spencer's personal and compelling narrative about her battle to establish a new type of school two decades ago marks her out as an innovator ahead of her time.",
+            name: 'Tony Breslin',
+            role: 'Chair, Human Scale Education',
+          },
+          {
+            quote: "Rosalyn's courageous establishment was a much-needed exemplar of change in education-provision, in what is now, a socio-ecologically fragmenting Britain.",
+            name: 'Stuart McBurney',
+            role: "Author, Ecology into Economics Won't Go",
+          },
+        ].map(({ quote, name, role }) => (
+          <blockquote class="border-l-4 border-sage pl-6">
+            <p class="font-serif italic text-xl text-ink-light leading-relaxed mb-3">&ldquo;{quote}&rdquo;</p>
+            <footer>
+              <p class="font-sans text-sm font-medium text-ink">{name}</p>
+              <p class="font-sans text-xs text-warm-400">{role}</p>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

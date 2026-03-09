@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RetreatCard from '../components/RetreatCard.astro';
+
+const groupRetreats2026 = [
+  { dates: '27–29 March',    title: 'Maintaining Motivation for Writing', price: '£210',  duration: '3 days' },
+  { dates: '27–28 June',     title: 'Writing for Children',               price: '£180',  duration: '2 days' },
+  { dates: '10–12 July',     title: 'Good Writing Practice',              price: '£210',  duration: '3 days' },
+  { dates: '15–16 August',   title: 'Writing from Life (incl. Memoir)',   price: '£180',  duration: '2 days' },
+  { dates: '26–27 September',title: 'Self-Publishing Weekend',            price: '£180',  duration: '2 days' },
+  { dates: '27–29 November', title: 'Making Time to Write',               price: '£210',  duration: '3 days' },
+];
+---
+
+<BaseLayout
+  title="Writers' Retreat"
+  description="Longthwaite Writers' Retreat — a peaceful 300-year-old Cumbrian farmhouse near the Lake District, offering residential stays and group retreats for writers."
+>
+
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-6 pt-20 pb-12 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-sage">Cumbria, England</span>
+    <h1 class="font-serif text-5xl md:text-6xl font-semibold text-ink mt-3 mb-4">
+      Longthwaite Writers' Retreat
+    </h1>
+    <p class="font-serif italic text-xl text-warm-400 max-w-2xl mx-auto">
+      The perfect place to make progress with your writing in peaceful surroundings.
+    </p>
+  </section>
+
+  <!-- Farmhouse photo -->
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <img
+      src="/images/longthwaite-farmhouse.jpg"
+      alt="Longthwaite farmhouse — Rosalyn Spencer's writers' retreat in Cumbria"
+      class="w-full rounded-2xl shadow-xl object-cover max-h-[480px]"
+    />
+  </section>
+
+  <!-- About -->
+  <section class="max-w-3xl mx-auto px-6 pb-16">
+    <p class="font-sans text-ink-light leading-relaxed text-lg">
+      After renovating our 300-year-old Cumbrian Farmhouse — situated just outside the Lake District National Park in Northern England (not far from the Scottish Border) — we offer residential stays for individual writers, as well as two or three-day weekend retreats for up to six writers.
+    </p>
+    <p class="font-sans text-warm-400 text-sm mt-4">
+      All stays include homemade plant-based meals and cakes, and you'll find plenty of beautiful writing spots both inside and around the farmhouse.
+    </p>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6">
+    <hr class="border-warm-200" />
+  </div>
+
+  <!-- Group Retreats 2026 -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="font-serif text-3xl text-ink mb-2">2026 Weekend Group Retreats</h2>
+    <p class="font-sans text-warm-400 text-sm mb-8">For up to 6 writers. Prices include all meals &amp; refreshments but exclude accommodation costs.</p>
+
+    <div class="bg-white/60 rounded-2xl border border-warm-200 px-6 py-2 mb-6">
+      {groupRetreats2026.map((r) => (
+        <RetreatCard dates={r.dates} title={r.title} price={r.price} duration={r.duration} />
+      ))}
+    </div>
+
+    <div class="font-sans text-sm text-warm-400 space-y-1">
+      <p>3-day retreats: Fri &amp; Sat 9:30–20:30, and Sun 9:30–16:30</p>
+      <p>2-day retreats: Sat 9:30–20:30, and Sun 9:30–16:30</p>
+      <p class="mt-3">Limited accommodation available from <strong class="text-ink">£40–£50 per night</strong></p>
+    </div>
+  </section>
+
+  <!-- Individual Residential Stays -->
+  <section class="bg-parchment-dark py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-serif text-3xl text-ink mb-4">Residential Stays for Individual Writers</h2>
+      <p class="font-sans text-ink-light leading-relaxed mb-4">
+        For those wishing to spend a few days (or longer) here working on a writing project. You will be well looked after with healthy plant-based meals and home-made cakes (and no household chores to do).
+      </p>
+      <p class="font-sans text-ink-light leading-relaxed mb-6">
+        Book a stay of two nights or longer: <strong class="text-ink">£150/night</strong> (views of fields &amp; fells) or <strong class="text-ink">£140/night</strong> (garden/pond view).
+      </p>
+
+      <h3 class="font-serif text-xl text-ink mb-3">Where you can write</h3>
+      <ul class="font-sans text-ink-light space-y-1 mb-8">
+        {[
+          'Your own room at a desk by the window',
+          'The living room or snug (with a large selection of books on writing)',
+          'The kitchen table',
+          'The summerhouse or garden',
+          'By the wildlife pond with stream',
+          'Under the covered pergola',
+          'A short walk or drive to somewhere truly inspirational in the Lakes',
+        ].map((item) => (
+          <li class="flex items-start gap-2">
+            <span class="text-sage mt-0.5">&#10003;</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="font-serif text-3xl text-ink mb-10 text-center">Guest Reviews</h2>
+    <div class="space-y-8">
+      <blockquote class="bg-sage-pale rounded-2xl p-8">
+        <p class="font-serif italic text-lg text-ink-light leading-relaxed mb-4">
+          &ldquo;I went on the retreat to have some space and time to write. As a busy single parent, I just needed the opportunity to get writing, and that is just what I did! My room made me feel like Emily Brontë, and by the window with the stunning views outside was the perfect place to sit and let my imagination flow. The food was out of this world — easily restaurant standard. I had a super productive weekend, and to be honest, I didn&rsquo;t really want to leave!&rdquo;
+        </p>
+        <footer class="font-sans text-sm text-sage font-medium">Emma Nicholson</footer>
+      </blockquote>
+
+      <blockquote class="bg-amber-pale rounded-2xl p-8">
+        <p class="font-serif italic text-lg text-ink-light leading-relaxed mb-4">
+          &ldquo;Absolutely magical! Staying at this incredible writing retreat was one of the most inspiring and nourishing experiences I&rsquo;ve ever had. The large cottage is set in the most breathtaking, peaceful location, perfect for sparking creativity and focus. From the moment I arrived, I felt completely looked after. The hosts are simply incredible: warm, attentive, and genuinely passionate about creating the perfect environment for writers to thrive. The food — three delicious, home-cooked meals a day that felt like a hug on a plate. I left feeling inspired, rejuvenated, and deeply grateful. I can&rsquo;t wait to return!&rdquo;
+        </p>
+        <footer class="font-sans text-sm text-amber font-medium">Recent guest</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+    <h2 class="font-serif text-3xl text-ink mb-4">Interested?</h2>
+    <p class="font-sans text-warm-400 mb-8">
+      Get in touch with Rosalyn to discuss dates, availability, and anything else you'd like to know.
+    </p>
+    <a
+      href="/contact"
+      class="inline-block bg-sage text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-sage-light transition-colors"
+    >
+      Get in Touch
+    </a>
+  </section>
+
+</BaseLayout>

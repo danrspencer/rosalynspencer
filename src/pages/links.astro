@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const links = [
+  { name: 'Human Scale Education',    url: 'https://www.humanscaleeducation.org',        description: 'Supporting small, human-scale schools across the UK.' },
+  { name: 'Relational Schools',        url: 'https://www.relationalschools.org',           description: 'Research into the role of relationships in education.' },
+  { name: 'Personalised Education Now',url: 'https://www.personalisededucationnow.org.uk', description: 'Advocating for flexible and personalised approaches to learning.' },
+  { name: 'Freedom to Learn',          url: 'https://www.freedomtolearn.co.uk',            description: 'Resources and support for home educating families.' },
+  { name: 'Dr Max Hope',               url: 'https://www.maxhope.co.uk',                  description: 'Research on democratic and alternative education.' },
+  { name: 'Education Otherwise',       url: 'https://www.educationotherwise.org',          description: 'Supporting the home education community since 1977.' },
+  { name: 'The Nurture Group Network', url: 'https://www.nurtureuk.org',                  description: 'Championing nurture as a key approach in schools.' },
+];
+---
+
+<BaseLayout
+  title="Links"
+  description="Useful links related to alternative education, human scale schooling, and home education — recommended by Rosalyn Spencer."
+>
+
+  <div class="max-w-3xl mx-auto px-6 pt-20 pb-24">
+    <h1 class="font-serif text-5xl font-semibold text-ink mb-4">Links</h1>
+    <p class="font-sans text-warm-400 text-lg mb-12">
+      If you found my website interesting you may be interested in these too&hellip;
+    </p>
+
+    <div class="space-y-4">
+      {links.map(({ name, url, description }) => (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-start gap-4 p-5 bg-parchment-dark rounded-xl border border-warm-200 hover:border-sage hover:bg-sage-pale/30 transition-all group"
+        >
+          <svg class="w-5 h-5 text-sage shrink-0 mt-0.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+          </svg>
+          <div>
+            <p class="font-serif text-lg text-ink group-hover:text-sage transition-colors">{name}</p>
+            {description && (
+              <p class="font-sans text-sm text-warm-400 mt-0.5">{description}</p>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+</BaseLayout>

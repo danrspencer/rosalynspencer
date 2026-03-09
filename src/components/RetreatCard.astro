@@ -1,0 +1,23 @@
+---
+interface Props {
+  dates: string;
+  title: string;
+  price: string;
+  duration: string;
+}
+
+const { dates, title, price, duration } = Astro.props;
+---
+
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-4 border-b border-warm-200 last:border-0">
+  <div class="flex flex-col gap-0.5">
+    <span class="font-sans text-sm text-warm-400">{dates}</span>
+    <span class="font-serif text-lg text-ink">{title}</span>
+  </div>
+  <div class="flex items-center gap-3 shrink-0">
+    <span class="font-sans text-xs text-warm-400">{duration}</span>
+    <span class="font-sans text-sm font-medium text-amber bg-amber-pale px-3 py-1 rounded-full whitespace-nowrap">
+      {price}
+    </span>
+  </div>
+</div>

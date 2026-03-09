@@ -1,0 +1,19 @@
+---
+interface Props {
+  publication: string;
+  title: string;
+  excerpt?: string;
+}
+
+const { publication, title, excerpt } = Astro.props;
+---
+
+<article class="border border-warm-200 rounded-xl p-6 bg-white/50 hover:bg-white/80 transition-colors">
+  <span class="inline-block font-sans text-xs font-medium tracking-widest uppercase text-sage mb-3">
+    {publication}
+  </span>
+  <h3 class="font-serif text-xl font-semibold text-ink mb-2">{title}</h3>
+  {excerpt && (
+    <p class="font-sans text-sm text-warm-400 leading-relaxed italic">&ldquo;{excerpt}&rdquo;</p>
+  )}
+</article>
