@@ -98,3 +98,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 
 </BaseLayout>
+
+<script>
+  // Pre-fill message textarea if ?message= param is present (e.g. from retreat enquiry links)
+  const params = new URLSearchParams(window.location.search);
+  const preset = params.get('message');
+  if (preset) {
+    const textarea = document.getElementById('message') as HTMLTextAreaElement | null;
+    if (textarea) textarea.value = preset;
+  }
+</script>

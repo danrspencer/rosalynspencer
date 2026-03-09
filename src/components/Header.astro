@@ -67,7 +67,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
       {mainLinks.map(({ href, label }) => {
         const isActive = href === '/' || href === RETREAT_URL
           ? currentPath === '/' || currentPath === '/retreat'
-          : currentPath.startsWith(href.replace(RETREAT_URL, '') || href);
+          : currentPath.startsWith(href);
         return (
           <a
             href={href}
@@ -118,7 +118,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
       {mainLinks.map(({ href, label }) => {
         const isActive = href === '/' || href === RETREAT_URL
           ? currentPath === '/' || currentPath === '/retreat'
-          : currentPath.startsWith(href.replace(RETREAT_URL, '') || href);
+          : currentPath.startsWith(href);
         return (
           <a
             href={href}
