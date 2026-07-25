@@ -45,19 +45,19 @@ const labelClass = 'block font-sans text-sm text-ink-light mb-1.5';
 ---
 
 <BaseLayout
-  title="Application Form — Longthwaite Writers' Retreat"
-  description="Apply for a residential stay or structured weekend retreat at Longthwaite Writers' Retreat in Cumbria."
+  title="Booking Form — Longthwaite Writers' Retreat"
+  description="Book a residential stay or structured weekend retreat at Longthwaite Writers' Retreat in Cumbria."
   section="retreat"
 >
   <RetreatSubNav current="structured" />
 
   <div class="max-w-2xl mx-auto px-6 pt-16 pb-24">
     <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Structured Weekend Retreats</span>
-    <h1 class="font-serif text-4xl md:text-5xl font-semibold text-ink mt-2 mb-4">Application Form</h1>
+    <h1 class="font-serif text-4xl md:text-5xl font-semibold text-ink mt-2 mb-4">Booking Form</h1>
     <p class="font-sans text-warm-400 text-lg mb-10">For both residential stays and structured weekend retreats.</p>
 
-    <form name="retreat-application" method="POST" netlify class="space-y-8">
-      <input type="hidden" name="form-name" value="retreat-application" />
+    <form name="retreat-booking" method="POST" netlify class="space-y-8">
+      <input type="hidden" name="form-name" value="retreat-booking" />
 
       <!-- Retreat type -->
       <fieldset class="bg-parchment-dark rounded-2xl p-6">
@@ -217,7 +217,7 @@ const labelClass = 'block font-sans text-sm text-ink-light mb-1.5';
         type="submit"
         class="w-full bg-forest text-white font-sans text-sm font-medium tracking-wide py-3 rounded-full hover:bg-forest-light transition-colors"
       >
-        Submit Application
+        Submit Booking Request
       </button>
     </form>
   </div>
