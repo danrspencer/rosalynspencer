@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../components/RetreatSubNav.astro';
+import { RETREAT_URL } from '../../config';
+
+const reviews = [
+  {
+    quote: "I went on the retreat to have some space and time to write. I didn't feel I needed any structured content to the weekend or any prompts to get me going, although that was on offer if required. As a busy single parent, I just needed the opportunity to get writing, and that is just what I did! My room made me feel like Emily Brontë, and by the window with the stunning views outside was the perfect place to sit and let my imagination flow. I had everything I needed and felt totally looked after all weekend. The food was out of this world — Ian is an amazing cook and everything he made tasted delicious, easily restaurant standard. I punctuated my writing with long walks in the countryside and slices of homemade cake with coffee. I had a super productive weekend, and to be honest, I didn't really want to leave!",
+    name: 'Emma Nicholson',
+    colour: 'bg-forest-pale',
+  },
+  {
+    quote: "Absolutely magical! Staying at this incredible writing retreat was one of the most inspiring and nourishing experiences I've ever had. The large cottage is set in the most breathtaking, peaceful location, perfect for sparking creativity and focus. From the moment I arrived, I felt completely looked after. The hosts are simply incredible: warm, attentive, and genuinely passionate about creating the perfect environment for writers to thrive. The cottage itself is spotless and cosy, with thoughtful touches throughout. And the food… wow. Three delicious, home-cooked meals a day that felt like a hug on a plate. I left feeling inspired, rejuvenated, and deeply grateful. I can't wait to return!",
+    name: 'Paul',
+    colour: 'bg-amber-pale',
+  },
+  {
+    quote: 'Spent three days here in July at their Writing Retreat. Simply wonderful in every way. The warmth of Ros and Ian, the fabulous food, a gorgeous house with so many places to write or read, the peace — all delightful.',
+    name: 'Gillian',
+    colour: 'bg-parchment-dark',
+  },
+  {
+    quote: 'A peaceful, homely and welcoming location to focus on my writing project. Rosalyn and Ian are perfect hosts, and provided everything we needed for an enjoyable three day retreat, including very generous, home-cooked and delicious vegan meals.',
+    name: 'Jo',
+    colour: 'bg-parchment-dark',
+  },
+];
+---
+
+<BaseLayout
+  title="Reviews"
+  description="Reviews from guests at Longthwaite Writers' Retreat in Cumbria."
+  section="retreat"
+>
+  <RetreatSubNav current="reviews" />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Guest Reviews</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      What writers have said about their time at Longthwaite.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-16">
+    <div class="grid md:grid-cols-2 gap-6">
+      {reviews.map(({ quote, name, colour }) => (
+        <blockquote class:list={[colour, 'rounded-2xl p-8 flex flex-col', colour === 'bg-parchment-dark' && 'border border-warm-200']}>
+          <p class="font-serif italic text-base text-ink-light leading-relaxed mb-4 flex-1">&ldquo;{quote}&rdquo;</p>
+          <footer class="font-sans text-sm text-forest font-medium">{name}</footer>
+        </blockquote>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+    <a
+      href={`${RETREAT_URL}/contact`}
+      class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
+    >
+      Get in Touch
+    </a>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+import { RETREAT_URL } from '../../../config';
+
+const categories = [
+  { title: 'Food at Longthwaite',  blurb: "Ian's home-cooked meals, cakes, and fresh veg from the garden.", cover: '/images/gallery/37.jpg', href: `${RETREAT_URL}/photos/food` },
+  { title: 'Writing Spaces',       blurb: 'The snug, the summerhouse, the pergola, and other favourite spots to write.', cover: '/images/gallery/06.jpg', href: `${RETREAT_URL}/photos/writing-spaces` },
+  { title: 'Local Area',           blurb: 'Cuddy Lonning and Longthwaite Road — the fields and farm animals on your doorstep.', cover: '/images/gallery/44.jpg', href: `${RETREAT_URL}/photos/local-area` },
+  { title: 'Nearby Places',        blurb: 'Coming soon — favourite spots a short walk or drive away.', cover: null, href: `${RETREAT_URL}/photos/nearby-places` },
+];
+---
+
+<BaseLayout
+  title="Photos"
+  description="Photos of Longthwaite Writers' Retreat — food, writing spaces, and the Cumbrian countryside."
+  section="retreat"
+>
+  <RetreatSubNav current="photos" />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Photos</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      A closer look around Longthwaite &mdash; browse by category.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-24">
+    <div class="grid sm:grid-cols-2 gap-6">
+      {categories.map(({ title, blurb, cover, href }) => (
+        <a
+          href={href}
+          class="group rounded-2xl border border-warm-200 bg-white/60 overflow-hidden hover:border-forest/40 transition-colors"
+        >
+          <div class="aspect-[3/2] bg-parchment-dark overflow-hidden">
+            {cover && (
+              <img
+                src={cover}
+                alt={title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            )}
+          </div>
+          <div class="p-5">
+            <h2 class="font-serif text-xl text-ink group-hover:text-forest transition-colors mb-1">{title}</h2>
+            <p class="font-sans text-sm text-warm-400 leading-relaxed">{blurb}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>

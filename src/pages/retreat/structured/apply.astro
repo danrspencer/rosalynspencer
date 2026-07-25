@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+
+const structuredRetreats = [
+  'Maintaining Motivation for Writing (27–29 March 2026)',
+  'Writing for Children (27–28 June 2026)',
+  'Good Writing Practice (10–12 July 2026)',
+  'Writing from Life, incl. Memoir (15–16 August 2026)',
+  'Self-Publishing Weekend (26–27 September 2026)',
+  'Making Time to Write (27–29 November 2026)',
+  'Other / not sure yet',
+];
+
+const experienceOptions = [
+  'Just starting out',
+  'Written a few short stories or poems',
+  'Written a full manuscript',
+  'Published author',
+  'Currently studying writing or literature',
+  'Other (please specify below)',
+];
+
+const goalOptions = [
+  'Dedicate time and space to write',
+  'Connect with other writers',
+  'Be inspired and motivated',
+  'Develop a current writing project',
+  'Start something new',
+  'Relax and recharge creatively',
+  'Other (please specify below)',
+];
+
+const hearAboutOptions = [
+  'Poster',
+  'Writing group',
+  'Word of mouth',
+  'Social media',
+  'Email',
+  'Other (please specify below)',
+];
+
+const inputClass = 'w-full font-sans text-sm bg-white border border-warm-200 rounded-lg px-4 py-2.5 text-ink placeholder-warm-200 focus:outline-none focus:border-forest transition-colors';
+const labelClass = 'block font-sans text-sm text-ink-light mb-1.5';
+---
+
+<BaseLayout
+  title="Application Form — Longthwaite Writers' Retreat"
+  description="Apply for a residential stay or structured weekend retreat at Longthwaite Writers' Retreat in Cumbria."
+  section="retreat"
+>
+  <RetreatSubNav current="structured" />
+
+  <div class="max-w-2xl mx-auto px-6 pt-16 pb-24">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Structured Weekend Retreats</span>
+    <h1 class="font-serif text-4xl md:text-5xl font-semibold text-ink mt-2 mb-4">Application Form</h1>
+    <p class="font-sans text-warm-400 text-lg mb-10">For both residential stays and structured weekend retreats.</p>
+
+    <form name="retreat-application" method="POST" netlify class="space-y-8">
+      <input type="hidden" name="form-name" value="retreat-application" />
+
+      <!-- Retreat type -->
+      <fieldset class="bg-parchment-dark rounded-2xl p-6">
+        <legend class="font-serif text-xl text-ink mb-4 px-1">What would you like to book?</legend>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+          <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+            <input type="radio" name="retreat-type" value="Residential Stay" id="type-residential" class="accent-forest" checked />
+            Residential Stay (unstructured)
+          </label>
+          <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+            <input type="radio" name="retreat-type" value="Structured Weekend Retreat" id="type-structured" class="accent-forest" />
+            Structured Weekend Retreat
+          </label>
+        </div>
+
+        <div id="residential-fields" class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="date-from" class={labelClass}>Preferred dates &mdash; from</label>
+            <input type="date" id="date-from" name="date-from" class={inputClass} />
+          </div>
+          <div>
+            <label for="date-to" class={labelClass}>Preferred dates &mdash; to</label>
+            <input type="date" id="date-to" name="date-to" class={inputClass} />
+          </div>
+        </div>
+
+        <div id="structured-fields" class="hidden space-y-4">
+          <div>
+            <label for="retreat-name" class={labelClass}>Which retreat would you like to book?</label>
+            <select id="retreat-name" name="retreat-name" class={inputClass}>
+              {structuredRetreats.map((r) => <option value={r}>{r}</option>)}
+            </select>
+          </div>
+          <div>
+            <span class={labelClass}>Will you be requiring accommodation?</span>
+            <div class="flex gap-6">
+              <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+                <input type="radio" name="accommodation-needed" value="Yes" class="accent-forest" /> Yes
+              </label>
+              <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+                <input type="radio" name="accommodation-needed" value="No" class="accent-forest" /> No
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Personal details -->
+      <fieldset class="space-y-5">
+        <legend class="font-serif text-xl text-ink mb-1">Your details</legend>
+
+        <div>
+          <label for="name" class={labelClass}>Name</label>
+          <input type="text" id="name" name="name" required class={inputClass} placeholder="Your name" />
+        </div>
+
+        <div>
+          <label for="address" class={labelClass}>Address</label>
+          <textarea id="address" name="address" rows="2" class={inputClass}></textarea>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="email" class={labelClass}>Email address</label>
+            <input type="email" id="email" name="email" required class={inputClass} placeholder="your@email.com" />
+          </div>
+          <div>
+            <label for="phone" class={labelClass}>Telephone number</label>
+            <input type="tel" id="phone" name="phone" class={inputClass} />
+          </div>
+        </div>
+
+        <div>
+          <label for="special-requirements" class={labelClass}>Any allergies, disabilities, or other special requirements?</label>
+          <textarea id="special-requirements" name="special-requirements" rows="2" class={inputClass} placeholder="Leave blank if none"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- Writing experience -->
+      <fieldset>
+        <legend class="font-serif text-xl text-ink mb-3">What is your writing experience?</legend>
+        <div class="space-y-2">
+          {experienceOptions.map((opt) => (
+            <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+              <input type="radio" name="writing-experience" value={opt} class="accent-forest" />
+              {opt}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <!-- Goals -->
+      <fieldset>
+        <legend class="font-serif text-xl text-ink mb-3">What would you like to achieve by staying at the retreat?</legend>
+        <div class="space-y-2">
+          {goalOptions.map((opt) => (
+            <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+              <input type="checkbox" name="goals" value={opt} class="accent-forest" />
+              {opt}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <!-- How did you hear about us -->
+      <fieldset>
+        <legend class="font-serif text-xl text-ink mb-3">How did you hear about us?</legend>
+        <div class="space-y-2">
+          {hearAboutOptions.map((opt) => (
+            <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+              <input type="radio" name="heard-about-us" value={opt} class="accent-forest" />
+              {opt}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <!-- Logistics -->
+      <fieldset class="grid sm:grid-cols-2 gap-6">
+        <div>
+          <span class={labelClass}>Do you require a parking space?</span>
+          <div class="flex gap-6">
+            <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+              <input type="radio" name="parking" value="Yes" class="accent-forest" /> Yes
+            </label>
+            <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+              <input type="radio" name="parking" value="No" class="accent-forest" /> No
+            </label>
+          </div>
+        </div>
+        <div>
+          <span class={labelClass}>Collection from Wigton Train Station?</span>
+          <div class="flex gap-6">
+            <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+              <input type="radio" name="station-collection" value="Yes" class="accent-forest" /> Yes
+            </label>
+            <label class="flex items-center gap-2 font-sans text-sm text-ink-light">
+              <input type="radio" name="station-collection" value="No" class="accent-forest" /> No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div>
+        <label for="additional-info" class={labelClass}>Anything else you&rsquo;d like to add?</label>
+        <textarea id="additional-info" name="additional-info" rows="4" class={inputClass} placeholder="Including details for any 'Other' answers above"></textarea>
+      </div>
+
+      <!-- Payment info -->
+      <div class="bg-forest-pale rounded-2xl p-6 font-sans text-sm text-ink-light space-y-2">
+        <p><strong class="text-ink">Structured Weekend Retreats:</strong> if we have a place available, we&rsquo;ll send you an invoice. The place is secured once we&rsquo;ve received payment.</p>
+        <p><strong class="text-ink">Unstructured Residential Retreats:</strong> we&rsquo;ll send you further information and, if you&rsquo;d like to go ahead, request a 15% deposit to secure your dates, with the full balance due no later than 28 days before your stay.</p>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-forest text-white font-sans text-sm font-medium tracking-wide py-3 rounded-full hover:bg-forest-light transition-colors"
+      >
+        Submit Application
+      </button>
+    </form>
+  </div>
+
+</BaseLayout>
+
+<script>
+  const residentialRadio = document.getElementById('type-residential') as HTMLInputElement | null;
+  const structuredRadio  = document.getElementById('type-structured') as HTMLInputElement | null;
+  const residentialFields = document.getElementById('residential-fields');
+  const structuredFields  = document.getElementById('structured-fields');
+
+  function updateVisibility() {
+    const isStructured = structuredRadio?.checked;
+    residentialFields?.classList.toggle('hidden', !!isStructured);
+    structuredFields?.classList.toggle('hidden', !isStructured);
+  }
+
+  residentialRadio?.addEventListener('change', updateVisibility);
+  structuredRadio?.addEventListener('change', updateVisibility);
+  updateVisibility();
+</script>

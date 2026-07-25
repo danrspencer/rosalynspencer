@@ -1,0 +1,33 @@
+---
+import { RETREAT_URL } from '../config';
+
+interface Props {
+  current?: 'structured' | 'stays' | 'writing-days' | 'photos' | 'reviews';
+}
+
+const { current } = Astro.props;
+
+const items = [
+  { key: 'structured',   href: `${RETREAT_URL}/structured`,   label: 'Structured Retreats' },
+  { key: 'stays',         href: `${RETREAT_URL}/stays`,         label: 'Unstructured Stays' },
+  { key: 'writing-days',  href: `${RETREAT_URL}/writing-days`,  label: 'Writing Days' },
+  { key: 'photos',        href: `${RETREAT_URL}/photos`,        label: 'Photos' },
+  { key: 'reviews',       href: `${RETREAT_URL}/reviews`,       label: 'Reviews' },
+] as const;
+---
+
+<nav class="border-b border-forest/20 bg-forest-pale/40 overflow-x-auto">
+  <div class="max-w-5xl mx-auto px-6 flex gap-2 py-3 min-w-max sm:min-w-0">
+    {items.map(({ key, href, label }) => (
+      <a
+        href={href}
+        class:list={[
+          'shrink-0 font-sans text-sm tracking-wide px-4 py-1.5 rounded-full transition-colors whitespace-nowrap',
+          current === key ? 'bg-forest text-white' : 'text-ink-light hover:bg-white/70',
+        ]}
+      >
+        {label}
+      </a>
+    ))}
+  </div>
+</nav>
