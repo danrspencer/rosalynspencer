@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+import RetreatCard from '../../../components/RetreatCard.astro';
+import { RETREAT_URL } from '../../../config';
+
+const groupRetreats2026 = [
+  { dates: '27–29 March',     title: 'Maintaining Motivation for Writing', price: '£210', duration: '3 days', href: null },
+  { dates: '27–28 June',      title: 'Writing for Children',               price: '£180', duration: '2 days', href: null },
+  { dates: '10–12 July',      title: 'Good Writing Practice',              price: '£210', duration: '3 days', href: null },
+  { dates: '15–16 August',    title: 'Writing from Life (incl. Memoir)',   price: '£120', duration: '2 days', href: `${RETREAT_URL}/structured/writing-from-life` },
+  { dates: '26–27 September', title: 'Self-Publishing Weekend',            price: '£180', duration: '2 days', href: `${RETREAT_URL}/structured/self-publishing` },
+  { dates: '27–29 November',  title: 'Making Time to Write',               price: '£210', duration: '3 days', href: `${RETREAT_URL}/structured/making-time-to-write` },
+];
+
+const infoPages = [
+  { title: 'Retreat Information',   blurb: 'What to expect, what’s included, and everything you need to know before you book.', href: `${RETREAT_URL}/structured/information` },
+  { title: 'Ian, Ros & Milly',      blurb: 'Meet your hosts — and the cockerpoo who’ll greet you at the door.',              href: `${RETREAT_URL}/structured/hosts` },
+  { title: 'Application Form',      blurb: 'Ready to book? Fill in the application form to get started.',                     href: `${RETREAT_URL}/structured/apply` },
+];
+---
+
+<BaseLayout
+  title="Structured Weekend Retreats"
+  description="Structured weekend writing retreats at Longthwaite — workshops, guest speakers, and homemade food in the Cumbrian countryside."
+  section="retreat"
+>
+  <RetreatSubNav current="structured" />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">For up to 6 writers</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Structured Weekend Retreats</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      Two or three-day weekend retreats built around workshops and guided writing, with time for your own
+      projects too. Prices include all meals &amp; refreshments but exclude accommodation costs.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-12">
+    <div class="mb-8">
+      <h2 class="font-serif text-xl text-ink mb-3">Each retreat includes:</h2>
+      <ul class="font-sans text-ink-light space-y-1.5">
+        {[
+          'Writing workshops',
+          'Time and space for individual writing',
+          'Homemade meals and cakes (all plant based)',
+          'Use of all indoor and outdoor writing spaces',
+        ].map((item) => (
+          <li class="flex items-start gap-2">
+            <span class="text-forest mt-0.5">&#10003;</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="bg-white/60 rounded-2xl border border-warm-200 px-6 py-2 mb-6">
+      {groupRetreats2026.map((r) => {
+        const message = `Hi, I'm interested in attending the '${r.title}' retreat (${r.dates} 2026).
+
+Number of attendees:
+Accommodation needed (£40–£50/night):
+Any questions or special requirements:`;
+        const href = r.href ?? `${RETREAT_URL}/contact?message=${encodeURIComponent(message)}`;
+        return <RetreatCard dates={r.dates} title={r.title} price={r.price} duration={r.duration} href={href} />;
+      })}
+    </div>
+
+    <div class="font-sans text-sm text-warm-400 space-y-1">
+      <p>3-day retreats: Fri &amp; Sat 9:30&ndash;20:30, and Sun 9:30&ndash;16:30</p>
+      <p>2-day retreats: Sat 9:30&ndash;20:30, and Sun 9:30&ndash;16:30</p>
+      <p class="mt-3">Limited accommodation available from <strong class="text-ink">£40&ndash;£50 per night</strong></p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-6">
+    <hr class="border-warm-200" />
+  </div>
+
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="font-serif text-3xl text-ink mb-8 text-center">Background Information</h2>
+    <div class="grid sm:grid-cols-3 gap-5">
+      {infoPages.map(({ title, blurb, href }) => (
+        <a
+          href={href}
+          class="flex flex-col bg-white/60 rounded-2xl border border-warm-200 p-6 hover:border-forest/40 hover:bg-forest-pale/40 transition-colors group"
+        >
+          <h3 class="font-serif text-lg text-ink group-hover:text-forest transition-colors mb-2">{title}</h3>
+          <p class="font-sans text-sm text-warm-400 leading-relaxed flex-1">{blurb}</p>
+          <span class="font-sans text-xs text-forest opacity-0 group-hover:opacity-100 transition-opacity mt-3">Read more &rarr;</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+import Gallery from '../../../components/Gallery.astro';
+
+const images = [
+  { src: '/images/gallery/02.jpg', alt: 'The back garden and patio, looking out to the fells' },
+  { src: '/images/gallery/03.jpg', alt: 'Rosalyn writing at the garden table' },
+  { src: '/images/gallery/04.jpg', alt: 'The living room, with wood burning stove and books' },
+  { src: '/images/gallery/05.jpg', alt: 'The snug fireplace, a cosy spot to write' },
+  { src: '/images/gallery/06.jpg', alt: 'The library, lined with books on writing' },
+  { src: '/images/gallery/08.jpg', alt: 'Writing together at the kitchen table' },
+  { src: '/images/gallery/11.jpg', alt: 'The summerhouse and wildlife pond' },
+  { src: '/images/gallery/12.jpg', alt: 'Inside the summerhouse, a peaceful place to write' },
+  { src: '/images/gallery/14.jpg', alt: 'The pergola, a sheltered spot to read and write outdoors' },
+  { src: '/images/gallery/20.jpg', alt: 'A bedroom desk looking out over the garden' },
+  { src: '/images/gallery/21.jpg', alt: 'A quiet writing desk by the window' },
+];
+---
+
+<BaseLayout
+  title="Writing Spaces — Photos"
+  description="The snug, the summerhouse, the pergola, and other favourite spots to write at Longthwaite Writers' Retreat."
+  section="retreat"
+>
+  <RetreatSubNav current="photos" />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Photos</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Writing Spaces</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      Plenty of beautiful writing spots, both inside and around the farmhouse.
+    </p>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 pb-24">
+    <Gallery images={images} />
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+import Gallery from '../../../components/Gallery.astro';
+
+const images = [
+  { src: '/images/gallery/01.jpg', alt: 'The farmhouse and garden' },
+  { src: '/images/gallery/13.jpg', alt: 'The wildlife pond' },
+  { src: '/images/gallery/15.jpg', alt: 'Views across the fields towards the fells' },
+  { src: '/images/gallery/39.jpg', alt: 'Fields near Longthwaite' },
+  { src: '/images/gallery/40.jpg', alt: 'Rosalyn and Milly out on a walk' },
+  { src: '/images/gallery/41.jpg', alt: 'Farmland near Longthwaite Road' },
+  { src: '/images/gallery/42.jpg', alt: 'A horse in a nearby field' },
+  { src: '/images/gallery/43.jpg', alt: 'A ewe and her lambs' },
+  { src: '/images/gallery/44.jpg', alt: 'Donkeys in a neighbouring field' },
+  { src: '/images/gallery/45.jpg', alt: 'Cows grazing near Longthwaite, with the fells beyond' },
+];
+---
+
+<BaseLayout
+  title="Local Area — Photos"
+  description="Cuddy Lonning and Longthwaite Road — the fields and farm animals around Longthwaite Writers' Retreat."
+  section="retreat"
+>
+  <RetreatSubNav current="photos" />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Photos</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Local Area</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      Cuddy Lonning and Longthwaite Road &mdash; the fields, fells and farm animals right on the doorstep.
+    </p>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 pb-24">
+    <Gallery images={images} />
+  </section>
+
+</BaseLayout>

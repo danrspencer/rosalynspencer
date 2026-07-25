@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+import { RETREAT_URL } from '../../../config';
+
+const enquireMessage = `Hi, I'm interested in attending 'Making Time to Write' (27–29 November 2026).
+
+Number of attendees:
+Accommodation needed (£40–£50/night):
+Any questions or special requirements:`;
+const enquireHref = `${RETREAT_URL}/contact?message=${encodeURIComponent(enquireMessage)}`;
+---
+
+<BaseLayout
+  title="Making Time to Write — Structured Weekend Retreat"
+  description="Making Time to Write at Longthwaite Writers' Retreat, 27–29 November 2026 — full details coming soon."
+  section="retreat"
+>
+  <RetreatSubNav current="structured" />
+
+  <section class="max-w-2xl mx-auto px-6 pt-16 pb-24 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Structured Weekend Retreat</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Making Time to Write</h1>
+    <p class="font-serif italic text-xl text-warm-400 mb-8">27th &ndash; 29th November, 2026</p>
+
+    <div class="bg-forest-pale rounded-2xl p-6 mb-8 inline-block">
+      <p class="font-serif text-3xl text-ink mb-1">£210</p>
+      <p class="font-sans text-sm text-ink-light">3 days &middot; all meals &amp; refreshments included</p>
+    </div>
+
+    <p class="font-sans text-ink-light text-lg leading-relaxed mb-10">
+      Full details of this retreat are coming soon. In the meantime, get in touch to register your interest
+      or ask any questions &mdash; we&rsquo;d love to hear from you.
+    </p>
+
+    <a
+      href={enquireHref}
+      class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
+    >
+      Enquire About This Retreat
+    </a>
+  </section>
+
+</BaseLayout>

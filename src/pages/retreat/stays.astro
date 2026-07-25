@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../components/RetreatSubNav.astro';
+import Gallery from '../../components/Gallery.astro';
+import { RETREAT_URL } from '../../config';
+
+const bedroomImages = [
+  { src: '/images/gallery/16.jpg', alt: 'Guest bedroom overlooking the front garden' },
+  { src: '/images/gallery/17.jpg', alt: 'Guest bedroom' },
+  { src: '/images/gallery/18.jpg', alt: 'Guest bedroom with wardrobe and dressing table' },
+  { src: '/images/gallery/19.jpg', alt: 'Bathroom with freestanding bath' },
+  { src: '/images/gallery/22.jpg', alt: 'Single bedroom' },
+];
+---
+
+<BaseLayout
+  title="Unstructured Retreats & Residential Stays"
+  description="Residential stays for individual writers at Longthwaite Writers' Retreat in Cumbria — unstructured time to work on your own writing project."
+  section="retreat"
+>
+  <RetreatSubNav current="stays" />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Unstructured</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Residential Stays for Individual Writers</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      For those wishing to spend a few days (or longer) here working on a writing project. You will be well looked
+      after with healthy plant-based meals and home-made cakes prepared by Ian &mdash; and no household chores to do.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-12">
+    <div class="bg-forest-pale rounded-2xl p-6 mb-12 text-center">
+      <p class="font-sans text-ink-light">
+        Book a stay of two nights or longer: <strong class="text-ink">£150/night</strong> (views of fields &amp; fells)
+        or <strong class="text-ink">£140/night</strong> (garden/pond view).
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-10 mb-12">
+      <div>
+        <h2 class="font-serif text-2xl text-ink mb-3">Your bedrooms</h2>
+        <p class="font-sans text-ink-light leading-relaxed">
+          We have two guest bedrooms available &ndash; one overlooking our front garden, grazing fields and fells
+          beyond; the other overlooking our back garden where we grow our own veg, have a wildlife garden,
+          summerhouse and pond with stream.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-serif text-2xl text-ink mb-3">Where you can write</h2>
+        <ul class="font-sans text-ink-light space-y-1.5">
+          {[
+            'Your own room at a desk by the window',
+            'The living room or snug (with a large selection of books on writing)',
+            'The kitchen table',
+            'The summerhouse or garden',
+            'By the wildlife pond with stream',
+            'Under the covered pergola',
+            'A short walk or drive to somewhere truly inspirational in the Lakes',
+          ].map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="text-forest mt-0.5">&#10003;</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <Gallery images={bedroomImages} />
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+    <a
+      href={`${RETREAT_URL}/contact`}
+      class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
+    >
+      Enquire About a Stay
+    </a>
+  </section>
+
+</BaseLayout>

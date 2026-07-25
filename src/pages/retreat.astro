@@ -1,28 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import RetreatCard from '../components/RetreatCard.astro';
+import RetreatSubNav from '../components/RetreatSubNav.astro';
 import Gallery from '../components/Gallery.astro';
 import { RETREAT_URL } from '../config';
 
-const groupRetreats2026 = [
-  { dates: '27–29 March',     title: 'Maintaining Motivation for Writing', price: '£210', duration: '3 days' },
-  { dates: '27–28 June',      title: 'Writing for Children',               price: '£180', duration: '2 days' },
-  { dates: '10–12 July',      title: 'Good Writing Practice',              price: '£210', duration: '3 days' },
-  { dates: '15–16 August',    title: 'Writing from Life (incl. Memoir)',   price: '£180', duration: '2 days' },
-  { dates: '26–27 September', title: 'Self-Publishing Weekend',            price: '£180', duration: '2 days' },
-  { dates: '27–29 November',  title: 'Making Time to Write',               price: '£210', duration: '3 days' },
-];
-
 const galleryImages = [
   { src: '/images/gallery/01.jpg', alt: 'Longthwaite farmhouse from the front garden' },
-  { src: '/images/gallery/44.jpg', alt: 'Views across the Cumbrian fells' },
-  { src: '/images/gallery/07.jpg', alt: 'Inside the farmhouse' },
-  { src: '/images/gallery/04.jpg', alt: 'The farmhouse garden' },
+  { src: '/images/gallery/45.jpg', alt: 'Views across the Cumbrian fells' },
+  { src: '/images/gallery/06.jpg', alt: 'Inside the farmhouse' },
+  { src: '/images/gallery/02.jpg', alt: 'The farmhouse garden' },
   { src: '/images/gallery/05.jpg', alt: 'A quiet writing corner' },
-  { src: '/images/gallery/26.jpg', alt: 'The summerhouse' },
-  { src: '/images/gallery/27.jpg', alt: 'Wildlife garden and pond' },
-  { src: '/images/gallery/13.jpg', alt: 'Homemade plant-based food' },
-  { src: '/images/gallery/18.jpg', alt: 'The surrounding countryside' },
+  { src: '/images/gallery/12.jpg', alt: 'The summerhouse' },
+  { src: '/images/gallery/11.jpg', alt: 'Wildlife garden and pond' },
+  { src: '/images/gallery/37.jpg', alt: 'Homemade plant-based food' },
+  { src: '/images/gallery/15.jpg', alt: 'The surrounding countryside' },
+];
+
+const sections = [
+  { title: 'Structured Weekend Retreats',   blurb: 'Workshops, guest speakers, and homemade food, over two or three days.', href: `${RETREAT_URL}/structured` },
+  { title: 'Unstructured Stays',             blurb: 'Residential stays for individual writers, at your own pace.',          href: `${RETREAT_URL}/stays` },
+  { title: 'Writing Days',                   blurb: 'Standalone writing days — details coming soon.',                       href: `${RETREAT_URL}/writing-days` },
+  { title: 'Photos',                         blurb: 'Food, writing spaces, and the Cumbrian countryside.',                  href: `${RETREAT_URL}/photos` },
+  { title: 'Reviews',                        blurb: 'What writers have said about their time at Longthwaite.',              href: `${RETREAT_URL}/reviews` },
 ];
 ---
 
@@ -31,6 +30,7 @@ const galleryImages = [
   description="Longthwaite Writers' Retreat — a peaceful 300-year-old Cumbrian farmhouse near the Lake District, offering residential stays and group retreats for writers."
   section="retreat"
 >
+  <RetreatSubNav />
 
   <!-- Hero -->
   <section class="max-w-5xl mx-auto px-6 pt-20 pb-12 text-center">
@@ -65,150 +65,29 @@ const galleryImages = [
     </p>
   </section>
 
+  <!-- Section cards -->
+  <section class="max-w-5xl mx-auto px-6 pb-16">
+    <div class="grid sm:grid-cols-2 gap-5">
+      {sections.map(({ title, blurb, href }) => (
+        <a
+          href={href}
+          class="group flex flex-col bg-white/60 rounded-2xl border border-warm-200 p-6 hover:border-forest/40 hover:bg-forest-pale/40 transition-colors"
+        >
+          <h2 class="font-serif text-xl text-ink group-hover:text-forest transition-colors mb-1">{title}</h2>
+          <p class="font-sans text-sm text-warm-400 leading-relaxed flex-1">{blurb}</p>
+          <span class="font-sans text-xs text-forest opacity-0 group-hover:opacity-100 transition-opacity mt-3">Explore &rarr;</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
   <!-- Photo Gallery -->
   <section class="max-w-5xl mx-auto px-6 pb-16">
     <Gallery images={galleryImages} />
     <p class="font-sans text-sm text-warm-400 text-center mt-6">
-      Please <a href={`${RETREAT_URL}/contact`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">get in touch</a> to arrange a visit.
+      See more in <a href={`${RETREAT_URL}/photos`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">Photos</a>,
+      or <a href={`${RETREAT_URL}/contact`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">get in touch</a> to arrange a visit.
     </p>
-  </section>
-
-  <div class="max-w-5xl mx-auto px-6">
-    <hr class="border-warm-200" />
-  </div>
-
-  <!-- Group Retreats 2026 -->
-  <section class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="font-serif text-3xl text-ink mb-2">2026 Weekend Group Retreats</h2>
-    <p class="font-sans text-warm-400 text-sm mb-6">For up to 6 writers. Prices include all meals &amp; refreshments but exclude accommodation costs.</p>
-
-    <div class="mb-8">
-      <h3 class="font-serif text-xl text-ink mb-3">Each retreat includes:</h3>
-      <ul class="font-sans text-ink-light space-y-1.5">
-        {[
-          'Writing workshops',
-          'Time and space for individual writing',
-          'Homemade meals and cakes (all plant based)',
-          'Use of all indoor and outdoor writing spaces',
-        ].map((item) => (
-          <li class="flex items-start gap-2">
-            <span class="text-forest mt-0.5">&#10003;</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div class="bg-white/60 rounded-2xl border border-warm-200 px-6 py-2 mb-6">
-      {groupRetreats2026.map((r) => {
-        const message = `Hi, I'm interested in attending the '${r.title}' retreat (${r.dates} 2026).
-
-Number of attendees:
-Accommodation needed (£40–£50/night):
-Any questions or special requirements:`;
-        const href = `${RETREAT_URL}/contact?message=${encodeURIComponent(message)}`;
-        return <RetreatCard dates={r.dates} title={r.title} price={r.price} duration={r.duration} href={href} />;
-      })}
-    </div>
-
-    <div class="font-sans text-sm text-warm-400 space-y-1">
-      <p>3-day retreats: Fri &amp; Sat 9:30&ndash;20:30, and Sun 9:30&ndash;16:30</p>
-      <p>2-day retreats: Sat 9:30&ndash;20:30, and Sun 9:30&ndash;16:30</p>
-      <p class="mt-3">Limited accommodation available from <strong class="text-ink">£40&ndash;£50 per night</strong></p>
-    </div>
-  </section>
-
-  <!-- Individual Residential Stays -->
-  <section class="bg-parchment-dark py-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="font-serif text-3xl text-ink mb-4">Residential Stays for Individual Writers</h2>
-      <p class="font-sans text-ink-light leading-relaxed mb-4">
-        For those wishing to spend a few days (or longer) here working on a writing project. You will be well looked
-        after with healthy plant-based meals and home-made cakes prepared by Ian (and no household chores to do).
-      </p>
-      <p class="font-sans text-ink-light leading-relaxed mb-6">
-        Book a stay of two nights or longer: <strong class="text-ink">£150/night</strong> (views of fields &amp; fells)
-        or <strong class="text-ink">£140/night</strong> (garden/pond view).
-      </p>
-
-      <h3 class="font-serif text-xl text-ink mb-2">Your bedrooms</h3>
-      <p class="font-sans text-ink-light leading-relaxed mb-8">
-        We have two guest bedrooms available &ndash; one overlooking our front garden, grazing fields and fells beyond;
-        the other overlooking our back garden where we grow our own veg, have a wildlife garden, summerhouse and pond
-        with stream.
-      </p>
-
-      <h3 class="font-serif text-xl text-ink mb-3">Where you can write</h3>
-      <ul class="font-sans text-ink-light space-y-1.5">
-        {[
-          'Your own room at a desk by the window',
-          'The living room or snug (with a large selection of books on writing)',
-          'The kitchen table',
-          'The summerhouse or garden',
-          'By the wildlife pond with stream',
-          'Under the covered pergola',
-          'A short walk or drive to somewhere truly inspirational in the Lakes',
-        ].map((item) => (
-          <li class="flex items-start gap-2">
-            <span class="text-forest mt-0.5">&#10003;</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="font-serif text-3xl text-ink mb-10 text-center">Guest Reviews</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <blockquote class="bg-forest-pale rounded-2xl p-8 flex flex-col">
-        <p class="font-serif italic text-base text-ink-light leading-relaxed mb-4 flex-1">
-          &ldquo;I went on the retreat to have some space and time to write. I didn&rsquo;t feel I needed any structured
-          content to the weekend or any prompts to get me going, although that was on offer if required. As a busy single
-          parent, I just needed the opportunity to get writing, and that is just what I did! My room made me feel like
-          Emily Bront&euml;, and by the window with the stunning views outside was the perfect place to sit and let my
-          imagination flow. I had everything I needed and felt totally looked after all weekend. The food was out of this
-          world &mdash; Ian is an amazing cook and everything he made tasted delicious, easily restaurant standard. I
-          punctuated my writing with long walks in the countryside and slices of homemade cake with coffee. I had a super
-          productive weekend, and to be honest, I didn&rsquo;t really want to leave!&rdquo;
-        </p>
-        <footer class="font-sans text-sm text-forest font-medium">Emma Nicholson</footer>
-      </blockquote>
-
-      <blockquote class="bg-amber-pale rounded-2xl p-8 flex flex-col">
-        <p class="font-serif italic text-base text-ink-light leading-relaxed mb-4 flex-1">
-          &ldquo;Absolutely magical! Staying at this incredible writing retreat was one of the most inspiring and
-          nourishing experiences I&rsquo;ve ever had. The large cottage is set in the most breathtaking, peaceful
-          location, perfect for sparking creativity and focus. From the moment I arrived, I felt completely looked after.
-          The hosts are simply incredible: warm, attentive, and genuinely passionate about creating the perfect
-          environment for writers to thrive. The cottage itself is spotless and cosy, with thoughtful touches throughout.
-          And the food&hellip; wow. Three delicious, home-cooked meals a day that felt like a hug on a plate. I left
-          feeling inspired, rejuvenated, and deeply grateful. I can&rsquo;t wait to return!&rdquo;
-        </p>
-        <footer class="font-sans text-sm text-amber font-medium">Recent guest</footer>
-      </blockquote>
-
-      <blockquote class="bg-parchment-dark rounded-2xl p-8 border border-warm-200 flex flex-col">
-        <p class="font-serif italic text-base text-ink-light leading-relaxed mb-4 flex-1">
-          &ldquo;Spent three days here in July at their Writing Retreat. Simply wonderful in every way. The warmth of Ros
-          and Ian, the fabulous food, a gorgeous house with so many places to write or read, the peace &mdash; all
-          delightful.&rdquo;
-        </p>
-        <footer class="font-sans text-sm text-warm-400 font-medium">Recent guest</footer>
-      </blockquote>
-
-      <blockquote class="bg-parchment-dark rounded-2xl p-8 border border-warm-200 flex flex-col">
-        <p class="font-serif italic text-base text-ink-light leading-relaxed mb-4 flex-1">
-          &ldquo;A peaceful, homely and welcoming location to focus on my writing project. Rosalyn and Ian are perfect
-          hosts, and provided everything we needed for an enjoyable three day retreat, including very generous,
-          home-cooked and delicious vegan meals.&rdquo;
-        </p>
-        <footer class="font-sans text-sm text-warm-400 font-medium">Recent guest</footer>
-      </blockquote>
-
-    </div>
   </section>
 
   <!-- Contact CTA -->

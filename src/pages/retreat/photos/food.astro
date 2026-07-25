@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+import Gallery from '../../../components/Gallery.astro';
+
+const images = [
+  { src: '/images/gallery/09.jpg', alt: 'Breakfast table set with bread, cheese and salad' },
+  { src: '/images/gallery/10.jpg', alt: 'The breakfast cupboard, stocked with cereals and homemade bread' },
+  { src: '/images/gallery/23.jpg', alt: 'Home-grown blackberries, gooseberries and redcurrants' },
+  { src: '/images/gallery/24.jpg', alt: 'Home-grown courgettes, tomatoes, beans and potatoes' },
+  { src: '/images/gallery/25.jpg', alt: 'A pan of vegetable soup on the stove' },
+  { src: '/images/gallery/26.jpg', alt: 'Bean chilli with rice' },
+  { src: '/images/gallery/27.jpg', alt: 'Cottage pie, stew and vegetables ready to serve' },
+  { src: '/images/gallery/28.jpg', alt: 'A rich mushroom stew' },
+  { src: '/images/gallery/29.jpg', alt: 'The dining table set for dinner' },
+  { src: '/images/gallery/30.jpg', alt: 'Baked macaroni cheese with cherry tomatoes' },
+  { src: '/images/gallery/31.jpg', alt: 'A fresh salad with olives and vegetables' },
+  { src: '/images/gallery/32.jpg', alt: 'A bowl of fresh fruit salad' },
+  { src: '/images/gallery/33.jpg', alt: 'Pavlova topped with toasted almonds' },
+  { src: '/images/gallery/34.jpg', alt: 'Fruit crumble fresh from the oven' },
+  { src: '/images/gallery/35.jpg', alt: 'A small dessert' },
+  { src: '/images/gallery/36.jpg', alt: 'A bowl of fresh fruit' },
+  { src: '/images/gallery/37.jpg', alt: 'Homemade cakes, muffins and scones' },
+  { src: '/images/gallery/38.jpg', alt: 'Tea, cake and coffee on a tray' },
+];
+---
+
+<BaseLayout
+  title="Food at Longthwaite — Photos"
+  description="Ian's home-cooked plant-based meals, cakes, and fresh veg from the garden at Longthwaite Writers' Retreat."
+  section="retreat"
+>
+  <RetreatSubNav current="photos" />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Photos</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Food at Longthwaite</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      Homemade plant-based meals and cakes lovingly prepared by Ian, plus fresh veg from the garden.
+    </p>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 pb-24">
+    <Gallery images={images} />
+  </section>
+
+</BaseLayout>

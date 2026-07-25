@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+import { RETREAT_URL } from '../../../config';
+
+const enquireMessage = `Hi, I'm interested in attending 'Writing from Life' (15–16 August 2026).
+
+Full weekend or Saturday evening only:
+Accommodation needed (£40–£50/night):
+Any questions or special requirements:`;
+const enquireHref = `${RETREAT_URL}/contact?message=${encodeURIComponent(enquireMessage)}`;
+---
+
+<BaseLayout
+  title="Writing from Life — Structured Weekend Retreat"
+  description="Writing from Life — a weekend of life writing and memoir workshops at Longthwaite Writers' Retreat, 15–16 August 2026, with guest speaker Helen Farish."
+  section="retreat"
+>
+  <RetreatSubNav current="structured" />
+
+  <section class="max-w-3xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Structured Weekend Retreat</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Writing from Life</h1>
+    <p class="font-serif italic text-xl text-warm-400">
+      Saturday 15th &amp; Sunday 16th August, 2026
+    </p>
+    <p class="font-sans text-sm text-warm-400 mt-2">
+      Sat 9:30am&ndash;8:30pm &middot; Sun 9:30am&ndash;4:30pm
+    </p>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-12">
+    <div class="bg-white/60 rounded-2xl border border-warm-200 p-8 mb-10">
+      <h2 class="font-serif text-xl text-ink mb-4">Over two days&hellip;</h2>
+      <ul class="font-sans text-ink-light space-y-2">
+        {[
+          'Five workshops on life writing and memoir led by Rosalyn Spencer — author of two nonfiction / memoir-style books',
+          'Time and space for individual writing projects',
+          "Home-made meals and cakes (all plant-based — 'Very Good' FSA Food Hygiene rating)",
+          'Guest speaker: Helen Farish',
+        ].map((item) => (
+          <li class="flex items-start gap-2">
+            <span class="text-forest mt-0.5">&#10003;</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Guest speaker -->
+    <div class="flex flex-col sm:flex-row gap-6 items-start bg-amber-pale rounded-2xl p-8 mb-10">
+      <img
+        src="/images/helen-farish.jpg"
+        alt="Helen Farish, and the cover of her poetry collection The Penny Dropping"
+        class="w-full sm:w-56 shrink-0 rounded-xl shadow-md object-cover"
+      />
+      <div>
+        <p class="font-sans text-xs font-medium tracking-widest uppercase text-amber mb-2">Guest Speaker</p>
+        <h3 class="font-serif text-2xl text-ink mb-3">Helen Farish</h3>
+        <p class="font-sans text-ink-light leading-relaxed mb-3">
+          Award-winning poet Helen Farish will be joining us to read from her collection <em>The Penny Dropping</em>
+          (Bloodaxe, 2024). Drawing on powerful and universal themes, <em>The Penny Dropping</em> traces the journey
+          of a relationship from first meeting to eventual break-up &mdash; perfect for our &lsquo;Writing from
+          Life&rsquo; weekend.
+        </p>
+        <p class="font-sans text-ink-light leading-relaxed text-sm">
+          Helen has won the Forward Prize for Best First Collection, received a Poetry Book Society Recommendation,
+          and been twice shortlisted for the T. S. Eliot Prize. <em>The Penny Dropping</em> was a Poetry Society Book
+          of the Year. Helen was the first female Poet in Residence at the Wordsworth Trust, and is now a Poetry
+          School Tutor for the North West.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="grid sm:grid-cols-2 gap-5 mb-10">
+      <div class="bg-forest-pale rounded-2xl p-6">
+        <p class="font-sans text-sm text-forest font-medium mb-1">Full two-day event</p>
+        <p class="font-serif text-3xl text-ink mb-2">£120</p>
+        <p class="font-sans text-sm text-ink-light">All meals, refreshments, and the guest speaker included. Price excludes accommodation &mdash; please ask if you&rsquo;d like to stay.</p>
+      </div>
+      <div class="bg-parchment-dark rounded-2xl p-6 border border-warm-200">
+        <p class="font-sans text-sm text-warm-400 font-medium mb-1">Saturday evening only</p>
+        <p class="font-serif text-3xl text-ink mb-2">£22</p>
+        <p class="font-sans text-sm text-ink-light">A two-course meal and Helen&rsquo;s talk. Limited places available.</p>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="grid sm:grid-cols-3 gap-5 mb-12">
+      {[
+        { quote: 'Spent three days here in July at their Writing Retreat. Simply wonderful in every way. The warmth of Ros and Ian, the fabulous food, a gorgeous house with so many places to write or read, the peace - all delightful.', name: 'Gillian' },
+        { quote: "Absolutely magical! Staying at this incredible writing retreat was one of the most inspiring and nourishing experiences I've ever had.", name: 'Paul' },
+        { quote: 'A peaceful, homely and welcoming location to focus on my writing project. Rosalyn and Ian are perfect hosts and provided everything we needed for an enjoyable three-day retreat, including very generous, home-cooked and delicious vegan meals.', name: 'Jo' },
+      ].map(({ quote, name }) => (
+        <blockquote class="bg-white/60 rounded-2xl border border-warm-200 p-6 flex flex-col">
+          <p class="font-serif italic text-sm text-ink-light leading-relaxed mb-3 flex-1">&ldquo;{quote}&rdquo;</p>
+          <footer class="font-sans text-xs text-forest font-medium">{name}</footer>
+        </blockquote>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a
+        href={enquireHref}
+        class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
+      >
+        Enquire About This Retreat
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

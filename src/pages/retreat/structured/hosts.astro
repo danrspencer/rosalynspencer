@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../../components/RetreatSubNav.astro';
+import { AUTHOR_URL, RETREAT_URL } from '../../../config';
+---
+
+<BaseLayout
+  title="Ian, Ros & Milly — Your Hosts"
+  description="Meet Ian Johnson and Rosalyn Spencer, your hosts at Longthwaite Writers' Retreat in Cumbria — and Milly, their cockerpoo."
+  section="retreat"
+>
+  <RetreatSubNav current="structured" />
+
+  <div class="max-w-3xl mx-auto px-6 pt-16 pb-24">
+    <div class="flex flex-col sm:flex-row gap-8 items-start mb-10">
+      <img
+        src="/images/ian-and-ros.jpg"
+        alt="Ian Johnson and Rosalyn Spencer"
+        class="w-full sm:w-56 shrink-0 rounded-2xl shadow-md object-cover"
+      />
+      <div>
+        <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Your Hosts</span>
+        <h1 class="font-serif text-4xl font-semibold text-ink mt-2 mb-4">Ian Johnson &amp; Rosalyn Spencer</h1>
+        <p class="font-serif italic text-lg text-ink-light leading-relaxed">
+          We are delighted to welcome fellow writers into our home to share a nurturing, creative environment in
+          beautiful and peaceful surroundings.
+        </p>
+      </div>
+    </div>
+
+    <div class="font-sans text-ink-light leading-relaxed space-y-5 mb-12">
+      <p>
+        We met in 2001 and were married in Windermere in 2011. We lived in Lincolnshire for many years before one
+        of our regular trips to the Lake District in 2021 led to an impromptu decision to sell up and move to
+        Cumbria. Since buying our 300-year-old farmhouse near Wigton (just outside the Lake District National
+        Park), we&rsquo;ve spent a great deal of our time lovingly renovating the property and redesigning the
+        garden, making it a great place for fellow writers to enjoy &mdash; somewhere they can find inspiration
+        and be creative.
+      </p>
+
+      <h2 class="font-serif text-2xl text-ink pt-4">Rosalyn</h2>
+      <p>
+        I have been writing for many years as well as holding down full-time positions in teaching and the Youth
+        Offending Service. After working part-time for eight years as an Elective Home Education Advisor for a
+        local authority, I decided to leave that role to spend more time on my own writing and to run a Writers&rsquo;
+        Retreat from our home.
+      </p>
+      <p>
+        My writing is mainly narrative non-fiction promoting a more human-scale approach to education. I have also
+        written about parenting, the environment, and a few other issues. I&rsquo;ve had over twenty feature
+        articles published in national magazines including Nursery World, The Green Parent, Natural Parent,
+        Practical Caravan, and The New Writer. I was also commissioned by a national charity to write a 49-page
+        report entitled &lsquo;15 Small Schools&rsquo; based on research I completed for my Master&rsquo;s Degree.
+        My first book, &lsquo;Why I Started a Small School&rsquo;, was published in 2014. I am currently working on
+        a series of three books &mdash; and hoping the first of these will be published very soon.
+      </p>
+      <p>
+        More information about my writing is available on my <a href={`${AUTHOR_URL}/`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">author website</a>.
+      </p>
+
+      <h2 class="font-serif text-2xl text-ink pt-4">Ian</h2>
+      <p>
+        Ian used to be the IT Manager of a graphic design company but retired early due to ill health. He is an
+        active member of the Scalefour Model Railway Society &mdash; regularly attending meetings, and working on
+        his own model railway layout. Even though Ian says he is no writer, he has written several excellent blogs
+        connected to his hobbies and has had articles published in Model Railway magazines.
+      </p>
+      <p>
+        Ian has a passion for cooking and trying out new recipes. Our home frequently has an aroma of freshly made
+        bread or some other delicious offering. We grow our own fruit and veg, which we use when we can. The
+        cooking for the retreat will be plant-based. Earlier guests have said they had no idea vegan food could be
+        so varied and so delicious as they&rsquo;ve sampled his home-made meals, biscuits and cakes.
+      </p>
+      <p>
+        Both Ian and myself have Level 2 Awards for Food Safety for Catering. We had our Food Safety Inspection on
+        16th June, 2025, and achieved a level 5 (Very Good) Food Hygiene Rating.
+      </p>
+
+      <h2 class="font-serif text-2xl text-ink pt-4">Milly</h2>
+      <p>
+        The final member of our immediate family is our adopted cockerpoo. She&rsquo;s been with us for just over a
+        year after her original owners had both sadly died. Milly is extremely friendly and very lovable. She loves
+        meeting new house guests &mdash; especially if they tickle her tummy!
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-4 pt-4 border-t border-warm-200">
+      <a href={`${RETREAT_URL}/contact`} class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-7 py-3 rounded-full hover:bg-forest-light transition-colors">
+        Get in Touch
+      </a>
+      <a href={`${RETREAT_URL}/structured/apply`} class="inline-block border border-warm-200 text-ink-light font-sans text-sm font-medium tracking-wide px-7 py-3 rounded-full hover:border-forest hover:text-forest transition-colors">
+        Application Form
+      </a>
+    </div>
+  </div>
+
+</BaseLayout>
