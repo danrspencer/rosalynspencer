@@ -1,17 +1,86 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RetreatSubNav from '../../components/RetreatSubNav.astro';
-import ComingSoon from '../../components/ComingSoon.astro';
+import { RETREAT_URL } from '../../config';
+
+const schedule = [
+  { time: '9:30', activity: 'Coffee and biscuits / welcome' },
+  { time: '9:45', activity: 'Setting out our writing intentions' },
+  { time: '10:00', activity: 'Inspirational quotes' },
+  { time: '10:15', activity: 'Optional short meditation' },
+  { time: '10:25', activity: 'Quiet writing time in chosen space' },
+  { time: '11:30', activity: 'Refreshments' },
+  { time: '11:45', activity: 'More quiet writing' },
+  { time: '13:00', activity: 'Lunch' },
+  { time: '14:00', activity: 'Walking / reading / writing / thinking' },
+  { time: '15:00', activity: 'Refreshments' },
+  { time: '15:15', activity: 'Quiet writing' },
+  { time: '16:15', activity: 'Feedback and future intentions' },
+  { time: '17:00', activity: 'End' },
+];
 ---
 
 <BaseLayout
   title="Writing Days"
-  description="Writing Days at Longthwaite Writers' Retreat in Cumbria — details coming soon."
+  description="Writing Days at Longthwaite Writers' Retreat in Cumbria — a day of quiet, supported writing time by arrangement."
   section="retreat"
 >
   <RetreatSubNav current="writing-days" />
-  <ComingSoon
-    title="Writing Days"
-    blurb="We're putting together details for standalone Writing Days at Longthwaite. Check back soon, or get in touch to register your interest."
-  />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Writing Days</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      A day away from distractions to focus on your writing, with lunch and refreshments provided.
+    </p>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-12">
+    <ul class="font-sans text-ink-light space-y-1.5 max-w-xl mx-auto mb-14">
+      {[
+        'An opportunity to focus without distractions',
+        'Lunch and refreshments provided',
+        'Comfortable indoor and outdoor writing spaces',
+        'Inspirational writing quotes',
+        'Optional short meditation',
+        'Support from other writers',
+      ].map((item) => (
+        <li class="flex items-start gap-2">
+          <span class="text-forest mt-0.5">&#10003;</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+
+    <h2 class="font-serif text-2xl text-ink mb-5 text-center">A Typical Writing Day</h2>
+    <div class="bg-forest-pale/40 rounded-2xl p-6 sm:p-8 max-w-xl mx-auto mb-14">
+      <dl class="font-sans text-sm divide-y divide-forest/15">
+        {schedule.map(({ time, activity }) => (
+          <div class="flex gap-4 py-2">
+            <dt class="text-forest font-medium w-14 shrink-0">{time}</dt>
+            <dd class="text-ink-light">{activity}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="font-sans text-ink-light leading-relaxed mb-2">
+        We are currently running Writing Days by arrangement. If you would like to attend a Writing Day here,
+        please get in touch and we can arrange a mutually convenient date.
+      </p>
+      <p class="font-sans text-ink-light leading-relaxed">
+        Once a date has been agreed, we'll let other writers know in case they'd like to join us.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+    <a
+      href={`${RETREAT_URL}/contact`}
+      class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
+    >
+      Get in Touch
+    </a>
+  </section>
+
 </BaseLayout>
