@@ -7,14 +7,17 @@ const videoReviews = [
   {
     name: 'Gillian',
     src: 'https://www.dropbox.com/scl/fo/5stlzctqxramknvfcy2pr/AJMAmr7qu0AXdKyDLMFb7s0/Videos/Gillian%20-%20video.mp4?rlkey=eqlr9kxa4ay32lowi9t3tea21&raw=1',
+    poster: '/images/reviews/gillian-poster.jpg',
   },
   {
     name: 'Janette',
     src: 'https://www.dropbox.com/scl/fo/5stlzctqxramknvfcy2pr/APbofTek6frMNTEWA4A3ECA/Videos/Janette%20video.mp4?rlkey=eqlr9kxa4ay32lowi9t3tea21&raw=1',
+    poster: '/images/reviews/janette-poster.jpg',
   },
   {
     name: 'Karen',
     src: 'https://www.dropbox.com/scl/fo/5stlzctqxramknvfcy2pr/AA_8QkbEqP2XuSYm7h0t9fA/Videos/Karen%20-%20video.mp4?rlkey=eqlr9kxa4ay32lowi9t3tea21&raw=1',
+    poster: '/images/reviews/karen-poster.jpg',
   },
 ];
 
@@ -59,9 +62,9 @@ const reviews = [
   <section class="max-w-4xl mx-auto px-6 pb-16">
     <h2 class="font-serif text-2xl text-ink mb-6 text-center">In Their Own Words</h2>
     <div class="grid sm:grid-cols-3 gap-6 mb-16">
-      {videoReviews.map(({ name, src }) => (
+      {videoReviews.map(({ name, src, poster }) => (
         <div class="rounded-2xl overflow-hidden bg-parchment-dark border border-warm-200">
-          <video controls preload="none" class="w-full aspect-video bg-ink" src={src}>
+          <video controls preload="none" poster={poster} class="w-full aspect-video object-cover bg-ink" src={src}>
             Your browser doesn't support embedded video.
           </video>
           <p class="font-sans text-sm text-forest font-medium text-center py-3">{name}</p>
