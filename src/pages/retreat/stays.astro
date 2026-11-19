@@ -9,7 +9,6 @@ const bedroomImages = [
   { src: '/images/gallery/17.jpg', alt: 'Guest bedroom' },
   { src: '/images/gallery/18.jpg', alt: 'Guest bedroom with wardrobe and dressing table' },
   { src: '/images/gallery/19.jpg', alt: 'Bathroom with freestanding bath' },
-  { src: '/images/gallery/22.jpg', alt: 'Single bedroom' },
 ];
 
 const weekendDates2027 = [
@@ -45,9 +44,12 @@ const midweekDates2027 = [
 
   <section class="max-w-4xl mx-auto px-6 pb-12">
     <div class="bg-forest-pale rounded-2xl p-6 mb-12 text-center">
-      <p class="font-sans text-ink-light">
-        Book a stay of two nights or longer: <strong class="text-ink">£150/night</strong> (views of fields &amp; fells)
-        or <strong class="text-ink">£140/night</strong> (garden/pond view).
+      <p class="font-sans text-ink-light mb-1">
+        <strong class="text-ink">£450</strong> for one writer (3 nights, full board)
+        &mdash; or <strong class="text-ink">£760</strong> for two writers sharing (3 nights, full board).
+      </p>
+      <p class="font-sans text-sm text-warm-400">
+        Longthwaite Writers&rsquo; Club members save 20% &mdash; <a href={`${RETREAT_URL}/contact`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">get in touch</a> to find out more.
       </p>
     </div>
 
@@ -107,8 +109,8 @@ const midweekDates2027 = [
     <h2 class="font-serif text-2xl text-ink mb-5 text-center">2027 Dates</h2>
 
     <div class="mb-8">
-      <h3 class="font-sans text-sm font-medium tracking-wide uppercase text-forest mb-2 text-center">
-        Weekend Retreats &mdash; 3 nights, Friday 11am&ndash;Monday 10am
+      <h3 class="font-sans text-sm font-medium tracking-wide text-forest mb-2 text-center">
+        <span class="uppercase">Weekend Retreats</span> &mdash; 3 nights, Friday 11am&ndash;Monday 10am
       </h3>
       <div class="bg-white/60 rounded-2xl border border-warm-200 px-6 py-2">
         {weekendDates2027.map((dates) => (
@@ -124,8 +126,8 @@ const midweekDates2027 = [
     </div>
 
     <div class="mb-8">
-      <h3 class="font-sans text-sm font-medium tracking-wide uppercase text-forest mb-2 text-center">
-        Mid-week Retreats &mdash; 3 nights, Monday 11am&ndash;Thursday 10am
+      <h3 class="font-sans text-sm font-medium tracking-wide text-forest mb-2 text-center">
+        <span class="uppercase">Mid-week Retreats</span> &mdash; 3 nights, Monday 11am&ndash;Thursday 10am
       </h3>
       <div class="bg-white/60 rounded-2xl border border-warm-200 px-6 py-2">
         {midweekDates2027.map((dates) => (

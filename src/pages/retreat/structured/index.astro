@@ -6,37 +6,37 @@ import { RETREAT_URL } from '../../../config';
 
 const groupRetreats2027 = [
   {
-    dates: '6–7 March', title: 'Poetry Weekend', duration: '2 days',
+    dates: '6–7 March', title: 'Poetry Weekend', duration: '2 days', price: '£216',
     subtitle: 'Led by Emma Storr · Guest: Helen Farish',
     message: "Hi, I'm interested in attending the 'Poetry Weekend' retreat (6–7 March 2027), led by Emma Storr.",
   },
   {
-    dates: '23–25 April', title: 'Focus on Writing', duration: '3 days',
+    dates: '23–25 April', title: 'Focus on Writing', duration: '3 days', price: '£348',
     subtitle: 'Developing and maintaining a sustainable writing practice · Led by Rosalyn Spencer',
     message: "Hi, I'm interested in attending the 'Focus on Writing' retreat (23–25 April 2027).",
   },
   {
-    dates: '8–9 May', title: 'Nature Writing', duration: '2 days',
+    dates: '8–9 May', title: 'Nature Writing', duration: '2 days', price: '£216',
     subtitle: 'Led by Susan Cartwright-Smith, Writer in Residence at Cumbria Wildlife Trust Gosling Sike Nature Reserve',
     message: "Hi, I'm interested in attending the 'Nature Writing' retreat (8–9 May 2027).",
   },
   {
-    dates: '26 May', title: 'Freelance Writing', duration: 'Half day, 9:30–12:00',
-    subtitle: 'Led by Monique Gadella',
+    dates: '26 May', title: 'Freelance Writing', duration: 'Half day, 9:30–12:00', price: '£30',
+    subtitle: 'Led by Monique Gadella · No discounts available',
     message: "Hi, I'm interested in attending the 'Freelance Writing' half-day (26 May 2027).",
   },
   {
-    dates: '16–18 July', title: 'Writing for Wellbeing', duration: '3 days',
+    dates: '16–18 July', title: 'Writing for Wellbeing', duration: '3 days', price: '£348',
     subtitle: 'Led by Rosalyn Spencer',
     message: "Hi, I'm interested in attending the 'Writing for Wellbeing' retreat (16–18 July 2027).",
   },
   {
-    dates: '20–22 August', title: 'Summer Writing Retreat', duration: '3 days',
+    dates: '20–22 August', title: 'Summer Writing Retreat', duration: '3 days', price: '£348',
     subtitle: 'Led by Rosalyn Spencer',
     message: "Hi, I'm interested in attending the 'Summer Writing Retreat' (20–22 August 2027).",
   },
   {
-    dates: '11–12 September', title: 'Writing from Life', duration: '2 days',
+    dates: '11–12 September', title: 'Writing from Life', duration: '2 days', price: '£216',
     subtitle: 'Led by Rosalyn Spencer · Guests: Jude Davison (Sat eve) & Helen Errington (Sun)',
     message: "Hi, I'm interested in attending the 'Writing from Life' retreat (11–12 September 2027).",
   },
@@ -57,7 +57,7 @@ const infoPages = [
   <RetreatSubNav current="structured" />
 
   <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
-    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">For up to 6 writers</span>
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">For small groups of writers</span>
     <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Structured Weekend Retreats</h1>
     <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
       Two or three-day weekend retreats built around workshops and guided writing, with time for your own
@@ -91,15 +91,17 @@ Number of attendees:
 Accommodation needed (£40–£50/night):
 Any questions or special requirements:`;
         const href = `${RETREAT_URL}/contact?message=${encodeURIComponent(fullMessage)}`;
-        return <RetreatCard dates={r.dates} title={r.title} duration={r.duration} subtitle={r.subtitle} href={href} />;
+        return <RetreatCard dates={r.dates} title={r.title} duration={r.duration} price={r.price} subtitle={r.subtitle} href={href} />;
       })}
     </div>
 
     <div class="font-sans text-sm text-warm-400 space-y-1">
-      <p>3-day retreats: Fri &amp; Sat 9:30&ndash;20:30, and Sun 9:30&ndash;16:30</p>
-      <p>2-day retreats: Sat 9:30&ndash;20:30, and Sun 9:30&ndash;16:30</p>
+      <p>3-day retreats: Fri &amp; Sat 9:30am&ndash;8:30pm, and Sun 9:30am&ndash;4:30pm</p>
+      <p>2-day retreats: Sat 9:30am&ndash;8:30pm, and Sun 9:30am&ndash;4:30pm</p>
+      <p class="mt-3">Early bird discount available if booked and paid in full at least 60 days before the event</p>
+      <p>Longthwaite Writers&rsquo; Club members save 30% &mdash; <a href={`${RETREAT_URL}/contact`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">get in touch</a> to find out more</p>
       <p class="mt-3">Limited accommodation available from <strong class="text-ink">£40&ndash;£50 per night</strong></p>
-      <p class="mt-3 italic">Full programme details and pricing for 2027 are coming soon &mdash; get in touch to register your interest.</p>
+      <p class="mt-3 italic">We need at least 4 participants for a group retreat to go ahead. If the minimum isn&rsquo;t reached 28 days before the date, we&rsquo;ll cancel the event and issue a full refund within 5 working days.</p>
     </div>
   </section>
 
