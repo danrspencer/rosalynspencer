@@ -6,7 +6,6 @@ import { RETREAT_URL } from '../config';
 
 const galleryImages = [
   { src: '/images/gallery/01.jpg', alt: 'Longthwaite farmhouse from the front garden' },
-  { src: '/images/gallery/45.jpg', alt: 'Views across the Cumbrian fells' },
   { src: '/images/gallery/06.jpg', alt: 'Inside the farmhouse' },
   { src: '/images/gallery/02.jpg', alt: 'The farmhouse garden' },
   { src: '/images/gallery/05.jpg', alt: 'A quiet writing corner' },
@@ -65,6 +64,39 @@ const sections = [
     </p>
   </section>
 
+  <!-- Membership -->
+  <section id="membership" class="max-w-4xl mx-auto px-6 pb-16 scroll-mt-24">
+    <div class="bg-forest-pale rounded-2xl p-8 sm:p-10">
+      <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">New for 2027</span>
+      <h2 class="font-serif text-3xl text-ink mt-2 mb-4">Longthwaite Writers&rsquo; Club</h2>
+      <ul class="font-sans text-ink-light space-y-1.5 mb-6">
+        {[
+          '30% off structured weekend retreats',
+          '50% off in-person Writing Days',
+          '20% off individual residential retreats',
+          'Invitation to our members-only Garden Party (Sat 24th July 2027)',
+          "Opportunity to be published in the Members' Annual Anthology",
+          'Monthly online writing session (1st Sunday, 7\u20138pm) and group coaching session (3rd Sunday, 7\u20138pm)',
+        ].map((item) => (
+          <li class="flex items-start gap-2">
+            <span class="text-forest mt-0.5">&#10003;</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="font-sans text-ink-light mb-6">
+        Membership is <strong class="text-ink">£22 a month</strong> &mdash; or just <strong class="text-ink">£15 a month</strong> with
+        our introductory offer if you join before 31st December 2026.
+      </p>
+      <a
+        href={`${RETREAT_URL}/membership`}
+        class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
+      >
+        Find Out More
+      </a>
+    </div>
+  </section>
+
   <!-- Section cards -->
   <section class="max-w-5xl mx-auto px-6 pb-16">
     <div class="grid sm:grid-cols-2 gap-5">
@@ -88,39 +120,6 @@ const sections = [
       See more in <a href={`${RETREAT_URL}/photos`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">Photos</a>,
       or <a href={`${RETREAT_URL}/contact`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">get in touch</a> to arrange a visit.
     </p>
-  </section>
-
-  <!-- Membership -->
-  <section id="membership" class="max-w-4xl mx-auto px-6 pb-16 scroll-mt-24">
-    <div class="bg-forest-pale rounded-2xl p-8 sm:p-10">
-      <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">New for 2027</span>
-      <h2 class="font-serif text-3xl text-ink mt-2 mb-4">Longthwaite Writers&rsquo; Club</h2>
-      <ul class="font-sans text-ink-light space-y-1.5 mb-6">
-        {[
-          '30% off structured weekend retreats',
-          '50% off in-person Writing Days',
-          '20% off individual residential retreats',
-          'Invitation to our members-only Garden Party',
-          "Opportunity to be published in the Members' Annual Anthology",
-          'Monthly online writing session and group coaching session',
-        ].map((item) => (
-          <li class="flex items-start gap-2">
-            <span class="text-forest mt-0.5">&#10003;</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-      <p class="font-sans text-ink-light mb-6">
-        Membership is <strong class="text-ink">£22 a month</strong> &mdash; or just <strong class="text-ink">£15 a month</strong> with
-        our introductory offer if you join before 31st December 2026.
-      </p>
-      <a
-        href={`${RETREAT_URL}/contact?message=${encodeURIComponent("Hi, I'd like to find out more about joining the Longthwaite Writers' Club.")}`}
-        class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
-      >
-        Find Out More
-      </a>
-    </div>
   </section>
 
   <!-- Contact CTA -->

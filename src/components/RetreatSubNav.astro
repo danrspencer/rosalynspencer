@@ -2,7 +2,7 @@
 import { RETREAT_URL } from '../config';
 
 interface Props {
-  current?: 'structured' | 'stays' | 'writing-days' | 'photos' | 'reviews';
+  current?: 'structured' | 'stays' | 'writing-days' | 'photos' | 'reviews' | 'club';
 }
 
 const { current } = Astro.props;
@@ -13,6 +13,7 @@ const items = [
   { key: 'writing-days',  href: `${RETREAT_URL}/writing-days`,  label: 'Writing Days' },
   { key: 'photos',        href: `${RETREAT_URL}/photos`,        label: 'Photos' },
   { key: 'reviews',       href: `${RETREAT_URL}/reviews`,       label: 'Reviews' },
+  { key: 'club',          href: `${RETREAT_URL}/membership`,    label: 'Writers\u2019 Club' },
 ] as const;
 ---
 
