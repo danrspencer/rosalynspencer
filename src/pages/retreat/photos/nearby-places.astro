@@ -1,17 +1,41 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import RetreatSubNav from '../../../components/RetreatSubNav.astro';
-import ComingSoon from '../../../components/ComingSoon.astro';
+import Gallery from '../../../components/Gallery.astro';
+
+const images = [
+  { src: '/images/gallery/78.jpg', alt: 'Guest writer Paul finding inspiration at Castlerigg Stone Circle (30 min drive)' },
+  { src: '/images/gallery/79.jpg', alt: 'Rosalyn writing at Castlerigg Stone Circle (30 min drive)' },
+  { src: '/images/gallery/80.jpg', alt: 'Derwentwater (30 min drive)' },
+  { src: '/images/gallery/81.jpg', alt: 'Friars Crag, Derwentwater (30 min drive)' },
+  { src: '/images/gallery/82.jpg', alt: 'Loweswater (35 min drive)' },
+  { src: '/images/gallery/83.jpg', alt: 'Rosalyn and Milly by Loweswater (35 min drive)' },
+  { src: '/images/gallery/84.jpg', alt: 'Crummock Water (40 min drive)' },
+  { src: '/images/gallery/85.jpg', alt: 'Buttermere (45 min drive)' },
+  { src: '/images/gallery/77.jpg', alt: 'Bassenthwaite in winter (20 min drive)' },
+];
 ---
 
 <BaseLayout
   title="Nearby Places — Photos"
-  description="Favourite nearby places to visit from Longthwaite Writers' Retreat — coming soon."
+  description="Favourite spots a short drive or bus ride from Longthwaite Writers' Retreat — Castlerigg Stone Circle, Derwentwater, Loweswater, Buttermere and more."
   section="retreat"
 >
   <RetreatSubNav current="photos" />
-  <ComingSoon
-    title="Nearby Places"
-    blurb="Photos of favourite spots a short walk or drive away are coming soon."
-  />
+
+  <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Photos</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Nearby Places</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
+      Photos of favourite spots a short drive or bus ride away.
+    </p>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 pb-24">
+    <Gallery images={images} />
+    <p class="font-sans text-sm text-warm-400 text-center mt-6">
+      Drive times are approximate, from Longthwaite.
+    </p>
+  </section>
+
 </BaseLayout>
