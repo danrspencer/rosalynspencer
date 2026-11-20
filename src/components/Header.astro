@@ -55,7 +55,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
   isRetreat ? 'border-b border-forest/30 bg-parchment/95' : 'border-b border-warm-200 bg-parchment/95',
 ]}>
   <!-- Retreat accent strip -->
-  {isRetreat && <div class="h-0.5 bg-forest" />}
+  <div class:list={['h-0.5', isRetreat && 'bg-forest']} />
 
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
     <!-- Wordmark -->
