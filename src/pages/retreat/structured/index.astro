@@ -42,11 +42,6 @@ const groupRetreats2027 = [
   },
 ];
 
-const infoPages = [
-  { title: 'Retreat Information',   blurb: 'What to expect, what’s included, and everything you need to know before you book.', href: `${RETREAT_URL}/structured/information` },
-  { title: 'Ian, Ros & Milly',      blurb: 'Meet your hosts — and the cockerpoo who’ll greet you at the door.',              href: `${RETREAT_URL}/structured/hosts` },
-  { title: 'Registration Form',     blurb: 'Attending for the first time? Fill in the registration form to get started.',                        href: `${RETREAT_URL}/structured/book` },
-];
 ---
 
 <BaseLayout
@@ -102,26 +97,6 @@ Any questions or special requirements:`;
       <p><a href={`${RETREAT_URL}/membership`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">Longthwaite Writers&rsquo; Club</a> members save 30% &mdash; <a href={`${RETREAT_URL}/membership`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">find out more</a></p>
       <p class="mt-3">Limited accommodation available from <strong class="text-ink">£40&ndash;£50 per night</strong></p>
       <p class="mt-3 italic">We need at least 4 participants for a group retreat to go ahead. If the minimum isn&rsquo;t reached 28 days before the date, we&rsquo;ll cancel the event and issue a full refund within 5 working days.</p>
-    </div>
-  </section>
-
-  <div class="max-w-4xl mx-auto px-6">
-    <hr class="border-warm-200" />
-  </div>
-
-  <section class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="font-serif text-3xl text-ink mb-8 text-center">Background Information</h2>
-    <div class="grid sm:grid-cols-3 gap-5">
-      {infoPages.map(({ title, blurb, href }) => (
-        <a
-          href={href}
-          class="flex flex-col bg-white/60 rounded-2xl border border-warm-200 p-6 hover:border-forest/40 hover:bg-forest-pale/40 transition-colors group"
-        >
-          <h3 class="font-serif text-lg text-ink group-hover:text-forest transition-colors mb-2">{title}</h3>
-          <p class="font-sans text-sm text-warm-400 leading-relaxed flex-1">{blurb}</p>
-          <span class="font-sans text-xs text-forest opacity-0 group-hover:opacity-100 transition-opacity mt-3">Read more &rarr;</span>
-        </a>
-      ))}
     </div>
   </section>
 

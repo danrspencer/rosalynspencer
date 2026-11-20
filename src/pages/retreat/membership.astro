@@ -64,7 +64,7 @@ const memberEvents = [
     </ul>
 
     <h2 class="font-serif text-3xl text-ink mb-4">Sessions &amp; events for members</h2>
-    <div class="space-y-4 mb-6">
+    <div class="space-y-4 mb-10">
       {memberEvents.map(({ title, when, blurb }) => (
         <div class="bg-white/60 rounded-2xl border border-warm-200 p-5">
           <h3 class="font-serif text-xl text-ink">{title}</h3>
@@ -72,13 +72,6 @@ const memberEvents = [
           <p class="font-sans text-sm text-ink-light leading-relaxed">{blurb}</p>
         </div>
       ))}
-    </div>
-
-    <div class="bg-amber-pale rounded-2xl p-5 mb-10">
-      <p class="font-sans text-sm text-ink-light leading-relaxed">
-        You agree to remain a paying member for at least 12 months. If you cancel prior to completing 12 months&rsquo;
-        payments, you must agree to repaying any member discounts received. Thank you.
-      </p>
     </div>
 
     <h2 class="font-serif text-3xl text-ink mb-4">Also included</h2>
