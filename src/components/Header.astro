@@ -34,13 +34,12 @@ const crossLink = isRetreat
 // Accent colours
 const activeClass    = isRetreat ? 'text-forest font-medium' : 'text-sage font-medium';
 const hoverClass     = isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage';
-const crossHover     = isRetreat ? 'text-warm-400 hover:text-forest' : 'text-warm-400 hover:text-sage';
 
 const crossClassDesktop = isRetreat
-  ? ['font-serif italic text-sm transition-colors px-2 py-1', crossHover]
+  ? ['font-sans text-sm font-medium whitespace-nowrap transition-colors px-3 py-0.5 rounded-full bg-forest text-white hover:bg-forest-light']
   : ['font-sans text-sm font-medium whitespace-nowrap transition-colors px-3 py-0.5 rounded-full bg-sage text-white hover:bg-sage-light'];
 const crossClassMobile = isRetreat
-  ? ['font-serif italic text-sm transition-colors py-1', crossHover]
+  ? ['font-sans text-sm font-medium whitespace-nowrap transition-colors px-3 py-0.5 rounded-full bg-forest text-white hover:bg-forest-light self-start']
   : ['font-sans text-sm font-medium transition-colors px-3 py-0.5 rounded-full bg-sage text-white hover:bg-sage-light self-start'];
 
 // Wordmark
