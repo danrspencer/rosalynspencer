@@ -1,17 +1,139 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import RetreatSubNav from '../../../components/RetreatSubNav.astro';
-import ComingSoon from '../../../components/ComingSoon.astro';
+import { RETREAT_URL } from '../../../config';
+
+const linkClass = 'text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors';
+
+const info = [
+  {
+    title: 'Where are we?',
+    body: [
+      'The retreat is just outside the market town of Wigton (13 miles south-west of Carlisle), Cumbria. There are regular train services from Carlisle to Wigton Train Station. Rosalyn and Ian are happy to pick up and drop off guests at the local station.',
+    ],
+  },
+  {
+    title: 'Meals and refreshments',
+    body: [
+      'Ros and Ian have completed Level 2 in Food Safety for Catering and have been awarded Level 5 (Very Good) by the Local Authority Environmental Health Dept. All meals and refreshments provided during the weekend will be plant-based (with the option of dairy milk for hot drinks if preferred). Please inform us of any allergies you may have.',
+    ],
+  },
+  {
+    title: 'Alcohol',
+    body: [
+      'The retreat is not licensed to serve alcohol to guests (even free of charge). If guests would like to drink alcohol during the evening sessions, please feel free to bring your own.',
+    ],
+  },
+  {
+    title: 'Accessibility',
+    body: [
+      'There is a toilet on the ground floor, and all retreat activities will take place at ground floor level. Please note there is a single low step between some ground floor areas. The two guest bedrooms and bathroom are on the first floor.',
+    ],
+  },
+  {
+    title: 'Smoking',
+    body: ['There is no smoking on the premises.'],
+  },
+  {
+    title: 'Dog',
+    body: [
+      'Please note that there is a friendly Cockapoo called Milly in residence. She is extremely friendly and loves having her tummy tickled.',
+    ],
+  },
+];
 ---
 
 <BaseLayout
-  title="Retreat Information — Structured Weekend Retreats"
-  description="Background information about structured weekend retreats at Longthwaite Writers' Retreat."
+  title="Retreat Information"
+  description="Background information about Longthwaite Writers' Retreat — where we are, meals, accessibility, payments, discounts and refunds."
   section="retreat"
 >
   <RetreatSubNav current="structured" />
-  <ComingSoon
-    title="Retreat Information"
-    blurb="Background information for structured weekend retreats is on its way. In the meantime, get in touch and we'll happily answer any questions."
-  />
+
+  <section class="max-w-3xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">Information</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">A message from the owners</h1>
+    <p class="font-serif italic text-xl text-warm-400">Longthwaite Writers&rsquo; Retreat</p>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-6 pb-24">
+    <div class="font-sans text-ink-light leading-relaxed space-y-5 mb-12">
+      <p>
+        The retreat is run by author Rosalyn Spencer and her husband, Ian Johnson
+        (<a href={`${RETREAT_URL}/structured/hosts`} class={linkClass}>find out more about your hosts</a>).
+      </p>
+
+      <h2 class="font-serif text-2xl text-ink pt-4">Background</h2>
+      <p>
+        Rosalyn and Ian opened their home to other writers in 2025, and the retreat evolved based on feedback from
+        those who attended. For example, our Writing Days came about because writers felt inspired to write whenever
+        they came here but didn&rsquo;t want to wait until the next group retreat.
+      </p>
+    </div>
+
+    <div class="space-y-8 mb-12">
+      {info.map(({ title, body }) => (
+        <div>
+          <h2 class="font-serif text-2xl text-ink mb-2">{title}</h2>
+          {body.map((para) => (
+            <p class="font-sans text-ink-light leading-relaxed">{para}</p>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-forest-pale rounded-2xl p-6 sm:p-8 mb-12">
+      <h2 class="font-serif text-3xl text-ink mb-5">Payments, discounts &amp; refunds</h2>
+      <div class="font-sans text-ink-light leading-relaxed space-y-5">
+        <div>
+          <h3 class="font-serif text-xl text-ink mb-1">Payments</h3>
+          <p>
+            To secure a place at the retreat payment needs to be made in full at the earliest opportunity. Payments
+            can be made by card or bank transfer.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-ink mb-1">Group events</h3>
+          <p>
+            Early bird discounts are available if paid in full more than 60 days before a group event takes place.
+            If fewer than 4 people are booked onto a group event 28 days before it is due to take place it will be
+            cancelled and a full refund issued within 5 working days.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-ink mb-1">Discounts available</h3>
+          <p>
+            In addition to the early bird discount for early payments, a new membership scheme has been launched
+            (intended to keep costs down for those who have become regulars at the retreat).
+            <a href={`${RETREAT_URL}#membership`} class={linkClass}>Find out about the Longthwaite Writers&rsquo; Club</a>.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-ink mb-1">Refunds</h3>
+          <p>
+            Full refunds will be given within 5 working days of an event being cancelled by the retreat due to low
+            numbers (at least 3 weeks prior to planned date of event). In other circumstances refunds can only be
+            given if a place can be filled by another paying participant. This is necessary to secure the long-term
+            viability of the retreat.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="font-sans text-ink-light leading-relaxed mb-10">
+      More information, including photographs and reviews, is available on our Facebook page:
+      Longthwaite Writers&rsquo; Retreat. You&rsquo;ll also find <a href={`${RETREAT_URL}/photos`} class={linkClass}>photos</a>
+      and <a href={`${RETREAT_URL}/reviews`} class={linkClass}>reviews</a> on this website.
+    </p>
+
+    <div class="flex flex-wrap gap-4 pt-4 border-t border-warm-200">
+      <a href={`${RETREAT_URL}/contact`} class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-7 py-3 rounded-full hover:bg-forest-light transition-colors">
+        Get in Touch
+      </a>
+      <a href={`${RETREAT_URL}/structured/hosts`} class="inline-block border border-warm-200 text-ink-light font-sans text-sm font-medium tracking-wide px-7 py-3 rounded-full hover:border-forest hover:text-forest transition-colors">
+        Meet Your Hosts
+      </a>
+    </div>
+  </div>
+
 </BaseLayout>
