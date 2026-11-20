@@ -11,6 +11,13 @@ const bedroomImages = [
   { src: '/images/gallery/19.jpg', alt: 'Bathroom with freestanding bath' },
 ];
 
+const photoLinkClass = 'font-sans text-sm text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors';
+
+const secondRoomImages = [
+  { src: '/images/gallery/20.jpg', alt: 'Second guest room with a double and a single bed' },
+  { src: '/images/gallery/21.jpg', alt: 'Second guest room with a writing desk by the window' },
+];
+
 const weekendDates2027 = [
   'Fri 2nd – Mon 5th April',
   'Fri 14th – Mon 17th May',
@@ -45,64 +52,69 @@ const midweekDates2027 = [
   <section class="max-w-4xl mx-auto px-6 pb-12">
     <div class="bg-forest-pale rounded-2xl p-6 mb-12 text-center">
       <p class="font-sans text-ink-light mb-1">
-        <strong class="text-ink">£450</strong> for one writer (3 nights, full board)
-        &mdash; or <strong class="text-ink">£760</strong> for two writers sharing (3 nights, full board).
+        <strong class="text-ink">£450</strong> for one writer / sole use of bathroom (3 nights, full board)
+        &mdash; or <strong class="text-ink">£760</strong> for two writers booking together
+        (individual bedrooms / sharing bathroom) (3 nights, full board).
       </p>
       <p class="font-sans text-sm text-warm-400">
         Longthwaite Writers&rsquo; Club members save 20% &mdash; <a href={`${RETREAT_URL}/contact`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">get in touch</a> to find out more.
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 gap-10 mb-12">
-      <div>
-        <h2 class="font-serif text-2xl text-ink mb-3">Bedroom &amp; bathroom</h2>
-        <p class="font-sans text-ink-light leading-relaxed">
-          Our main guestroom has a king size bed, wardrobe, dressing table and writing bureau next to a window
-          with views of fells and farmland. Tea &amp; coffee making facilities in the room, and good Wi-Fi.
-          Sole use of the bathroom (including shower &amp; bath).
-        </p>
-      </div>
-      <div>
-        <h2 class="font-serif text-2xl text-ink mb-3">Where you can write</h2>
-        <p class="font-sans text-ink-light leading-relaxed">
-          Choose to write in your own room, the living room (with log burning stove) or the snug (with
-          book-lined walls) &ndash; wherever you feel most comfortable. There are lots of outdoor spaces too,
-          including the summerhouse by the garden pond and running stream, the covered outdoor snug, a range of
-          other tables and chairs around the garden, or simply a blanket on the lawn.
-        </p>
+    <div class="mb-12">
+      <h2 class="font-serif text-2xl text-ink mb-3">Bedroom &amp; bathroom</h2>
+      <p class="font-sans text-ink-light leading-relaxed max-w-3xl mb-6">
+        Our main guestroom has a king size bed, wardrobe, dressing table and writing bureau next to a window
+        with views of fells and farmland. Tea &amp; coffee making facilities in the room, and good Wi-Fi.
+        Sole use of the bathroom (including shower &amp; bath).
+      </p>
+      <Gallery images={bedroomImages} />
+    </div>
+
+    <div class="mb-12">
+      <h2 class="font-serif text-2xl text-ink mb-3">Where you can write</h2>
+      <p class="font-sans text-ink-light leading-relaxed max-w-3xl mb-3">
+        Choose to write in your own room, the living room (with log burning stove) or the snug (with
+        book-lined walls) &ndash; wherever you feel most comfortable. There are lots of outdoor spaces too,
+        including the summerhouse by the garden pond and running stream, the covered outdoor snug, a range of
+        other tables and chairs around the garden, or simply a blanket on the lawn.
+      </p>
+      <a href={`${RETREAT_URL}/photos/writing-spaces`} class={photoLinkClass}>See photos of the writing spaces &rarr;</a>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="font-serif text-2xl text-ink mb-3">Meals</h2>
+      <p class="font-sans text-ink-light leading-relaxed max-w-3xl mb-3">
+        Continental breakfast (freshly made filtered coffee, fresh fruit, yoghurt, porridge, toast etc), a
+        light lunch, and a two-course evening meal &mdash; all plant based &mdash; included in the price, plus
+        home-made cakes. Mealtimes and snack times arranged to suit. Eat with Rosalyn and Ian, or, especially
+        if deep in thought, have a meal brought to you on a tray to eat alone in your chosen space.
+      </p>
+      <a href={`${RETREAT_URL}/photos/food`} class={photoLinkClass}>See photos of our meals &rarr;</a>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="font-serif text-2xl text-ink mb-3">Surrounding area</h2>
+      <p class="font-sans text-ink-light leading-relaxed max-w-3xl mb-3">
+        Country walks on the doorstep (walking shoes recommended). If you&rsquo;d like to venture further
+        afield and don&rsquo;t have your own transport, Rosalyn or Ian will drop you off in town at either the
+        train station or bus stop. There are regular bus services to Carlisle, Keswick, Cockermouth and other
+        lovely places, as well as train services to Carlisle and a lovely coastal route to Whitehaven.
+      </p>
+      <div class="flex flex-wrap gap-x-6 gap-y-1">
+        <a href={`${RETREAT_URL}/photos/local-area`} class={photoLinkClass}>See photos of the local area &rarr;</a>
+        <a href={`${RETREAT_URL}/photos/nearby-places`} class={photoLinkClass}>See photos of places further afield &rarr;</a>
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 gap-10 mb-12">
-      <div>
-        <h2 class="font-serif text-2xl text-ink mb-3">Meals</h2>
-        <p class="font-sans text-ink-light leading-relaxed">
-          Continental breakfast (freshly made filtered coffee, fresh fruit, yoghurt, porridge, toast etc), a
-          light lunch, and a two-course evening meal &mdash; all plant based &mdash; included in the price, plus
-          home-made cakes. Mealtimes and snack times arranged to suit. Eat with Rosalyn and Ian, or, especially
-          if deep in thought, have a meal brought to you on a tray to eat alone in your chosen space.
-        </p>
-      </div>
-      <div>
-        <h2 class="font-serif text-2xl text-ink mb-3">Surrounding area</h2>
-        <p class="font-sans text-ink-light leading-relaxed">
-          Country walks on the doorstep (walking shoes recommended). If you&rsquo;d like to venture further
-          afield and don&rsquo;t have your own transport, Rosalyn or Ian will drop you off in town at either the
-          train station or bus stop. There are regular bus services to Carlisle, Keswick, Cockermouth and other
-          lovely places, as well as train services to Carlisle and a lovely coastal route to Whitehaven.
-        </p>
-      </div>
-    </div>
-
-    <div class="bg-forest-pale rounded-2xl p-6 mb-12">
+    <div class="bg-forest-pale rounded-2xl p-6 mb-6">
       <h2 class="font-serif text-xl text-ink mb-2">Wanting to bring a friend?</h2>
       <p class="font-sans text-ink-light leading-relaxed">
         We have a second guest room available with views of our garden, summerhouse and pond. If you come on
         your own you&rsquo;ll have sole use of the bathroom; coming with a friend would mean sharing it.
       </p>
     </div>
-
-    <Gallery images={bedroomImages} />
+    <Gallery images={secondRoomImages} />
   </section>
 
   <section class="max-w-4xl mx-auto px-6 pb-12">

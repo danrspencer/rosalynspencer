@@ -36,6 +36,13 @@ const activeClass    = isRetreat ? 'text-forest font-medium' : 'text-sage font-m
 const hoverClass     = isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage';
 const crossHover     = isRetreat ? 'text-warm-400 hover:text-forest' : 'text-warm-400 hover:text-sage';
 
+const crossClassDesktop = isRetreat
+  ? ['font-serif italic text-sm transition-colors px-2 py-1', crossHover]
+  : ['font-serif text-xl font-semibold transition-colors px-4 py-1.5 rounded-full bg-sage text-white hover:bg-sage-light'];
+const crossClassMobile = isRetreat
+  ? ['font-serif italic text-sm transition-colors py-1', crossHover]
+  : ['font-serif text-xl font-semibold transition-colors py-1 text-sage hover:text-sage-light'];
+
 // Wordmark
 const wordmarkHref    = isRetreat ? `${RETREAT_URL}` : '/';
 const wordmarkPrimary = isRetreat ? "Longthwaite Writers\u2019 Retreat" : 'Rosalyn Spencer';
@@ -87,7 +94,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
       <!-- Cross-section gateway -->
       <a
         href={crossLink.href}
-        class:list={['font-serif italic text-base font-medium transition-colors px-2 py-1', crossHover]}
+        class:list={crossClassDesktop}
       >
         {crossLink.label}
       </a>
@@ -134,7 +141,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
       <hr class:list={['my-1', isRetreat ? 'border-forest/20' : 'border-warm-200']} />
       <a
         href={crossLink.href}
-        class:list={['font-serif italic text-base font-medium transition-colors py-1', crossHover]}
+        class:list={crossClassMobile}
       >
         {crossLink.label}
       </a>
