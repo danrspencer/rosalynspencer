@@ -3,6 +3,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RetreatSubNav from '../../components/RetreatSubNav.astro';
 import { RETREAT_URL } from '../../config';
 
+const videoReviews = [
+  {
+    name: 'Gillian',
+    src: 'https://www.dropbox.com/scl/fo/5stlzctqxramknvfcy2pr/AFAH1F0UEctLNd0N7VxzQBM/Videos%20%27What%20people%20are%20saying%20about%20us%27/Gillian%20-%20video.mp4?rlkey=eqlr9kxa4ay32lowi9t3tea21&raw=1',
+    poster: '/images/reviews/gillian-poster.jpg',
+  },
+  {
+    name: 'Janette',
+    src: 'https://www.dropbox.com/scl/fo/5stlzctqxramknvfcy2pr/AKL6ranc3mLaqa7WogiwX-8/Videos%20%27What%20people%20are%20saying%20about%20us%27/Janette%20video.mp4?rlkey=eqlr9kxa4ay32lowi9t3tea21&raw=1',
+    poster: '/images/reviews/janette-poster.jpg',
+  },
+  {
+    name: 'Karen',
+    src: 'https://www.dropbox.com/scl/fo/5stlzctqxramknvfcy2pr/AEQCF9qtLtZ6bzb5g9ctoT0/Videos%20%27What%20people%20are%20saying%20about%20us%27/Karen%20-%20video.mp4?rlkey=eqlr9kxa4ay32lowi9t3tea21&raw=1',
+    poster: '/images/reviews/karen-poster.jpg',
+  },
+];
+
 const reviews = [
   {
     quote: "I went on the retreat to have some space and time to write. I didn't feel I needed any structured content to the weekend or any prompts to get me going, although that was on offer if required. As a busy single parent, I just needed the opportunity to get writing, and that is just what I did! My room made me feel like Emily Brontë, and by the window with the stunning views outside was the perfect place to sit and let my imagination flow. I had everything I needed and felt totally looked after all weekend. The food was out of this world — Ian is an amazing cook and everything he made tasted delicious, easily restaurant standard. I punctuated my writing with long walks in the countryside and slices of homemade cake with coffee. I had a super productive weekend, and to be honest, I didn't really want to leave!",
@@ -42,6 +60,18 @@ const reviews = [
   </section>
 
   <section class="max-w-4xl mx-auto px-6 pb-16">
+    <h2 class="font-serif text-2xl text-ink mb-6 text-center">In Their Own Words</h2>
+    <div class="grid sm:grid-cols-3 gap-6 mb-16">
+      {videoReviews.map(({ name, src, poster }) => (
+        <div class="rounded-2xl overflow-hidden bg-parchment-dark border border-warm-200">
+          <video controls preload="none" poster={poster} class="w-full aspect-video object-cover bg-ink" src={src}>
+            Your browser doesn't support embedded video.
+          </video>
+          <p class="font-sans text-sm text-forest font-medium text-center py-3">{name}</p>
+        </div>
+      ))}
+    </div>
+
     <div class="grid md:grid-cols-2 gap-6">
       {reviews.map(({ quote, name, colour }) => (
         <blockquote class:list={[colour, 'rounded-2xl p-8 flex flex-col', colour === 'bg-parchment-dark' && 'border border-warm-200']}>

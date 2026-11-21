@@ -28,18 +28,24 @@ const mainLinks = isRetreat
 
 // Cross-section gateway link
 const crossLink = isRetreat
-  ? { href: `${AUTHOR_URL}/`,   label: '\u2190 Writing' }
-  : { href: `${RETREAT_URL}`,   label: 'Retreat \u2192' };
+  ? { href: `${AUTHOR_URL}/`,   label: 'Rosalyn\u2019s Writing \u2192' }
+  : { href: `${RETREAT_URL}`,   label: 'Writing Retreat \u2192' };
 
 // Accent colours
 const activeClass    = isRetreat ? 'text-forest font-medium' : 'text-sage font-medium';
 const hoverClass     = isRetreat ? 'text-ink-light hover:text-forest' : 'text-ink-light hover:text-sage';
-const crossHover     = isRetreat ? 'text-warm-400 hover:text-forest' : 'text-warm-400 hover:text-sage';
+
+const crossClassDesktop = isRetreat
+  ? ['font-sans text-sm font-medium whitespace-nowrap transition-colors px-3 py-0.5 rounded-full bg-forest text-white hover:bg-forest-light']
+  : ['font-sans text-sm font-medium whitespace-nowrap transition-colors px-3 py-0.5 rounded-full bg-sage text-white hover:bg-sage-light'];
+const crossClassMobile = isRetreat
+  ? ['font-sans text-sm font-medium whitespace-nowrap transition-colors px-3 py-0.5 rounded-full bg-forest text-white hover:bg-forest-light self-start']
+  : ['font-sans text-sm font-medium transition-colors px-3 py-0.5 rounded-full bg-sage text-white hover:bg-sage-light self-start'];
 
 // Wordmark
 const wordmarkHref    = isRetreat ? `${RETREAT_URL}` : '/';
 const wordmarkPrimary = isRetreat ? "Longthwaite Writers\u2019 Retreat" : 'Rosalyn Spencer';
-const wordmarkSub     = isRetreat ? 'Rosalyn Spencer' : 'Author & Writing Retreat Host';
+const wordmarkSub     = isRetreat ? 'Hosted by Rosalyn & Ian' : 'Author & Writing Retreat Host';
 const wordmarkColour  = isRetreat ? 'text-forest' : 'text-ink';
 const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hover:text-sage';
 ---
@@ -49,7 +55,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
   isRetreat ? 'border-b border-forest/30 bg-parchment/95' : 'border-b border-warm-200 bg-parchment/95',
 ]}>
   <!-- Retreat accent strip -->
-  {isRetreat && <div class="h-0.5 bg-forest" />}
+  <div class:list={['h-0.5', isRetreat && 'bg-forest']} />
 
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
     <!-- Wordmark -->
@@ -72,7 +78,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
           <a
             href={href}
             class:list={[
-              'font-sans text-sm tracking-wide transition-colors px-2 py-1',
+              'font-sans text-sm tracking-wide transition-colors px-1 lg:px-2 py-1',
               isActive ? activeClass : hoverClass,
             ]}
           >
@@ -87,7 +93,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
       <!-- Cross-section gateway -->
       <a
         href={crossLink.href}
-        class:list={['font-serif italic text-sm transition-colors px-2 py-1', crossHover]}
+        class:list={crossClassDesktop}
       >
         {crossLink.label}
       </a>
@@ -134,7 +140,7 @@ const wordmarkHover   = isRetreat ? 'group-hover:text-forest-dark' : 'group-hove
       <hr class:list={['my-1', isRetreat ? 'border-forest/20' : 'border-warm-200']} />
       <a
         href={crossLink.href}
-        class:list={['font-serif italic text-sm transition-colors py-1', crossHover]}
+        class:list={crossClassMobile}
       >
         {crossLink.label}
       </a>

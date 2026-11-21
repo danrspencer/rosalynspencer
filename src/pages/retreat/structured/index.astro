@@ -4,20 +4,44 @@ import RetreatSubNav from '../../../components/RetreatSubNav.astro';
 import RetreatCard from '../../../components/RetreatCard.astro';
 import { RETREAT_URL } from '../../../config';
 
-const groupRetreats2026 = [
-  { dates: '27–29 March',     title: 'Maintaining Motivation for Writing', price: '£210', duration: '3 days', href: `${RETREAT_URL}/structured/maintaining-motivation` },
-  { dates: '27–28 June',      title: 'Writing for Children',               price: '£180', duration: '2 days', href: `${RETREAT_URL}/structured/writing-for-children` },
-  { dates: '10–12 July',      title: 'Good Writing Practice',              price: '£210', duration: '3 days', href: `${RETREAT_URL}/structured/good-writing-practice` },
-  { dates: '15–16 August',    title: 'Writing from Life (incl. Memoir)',   price: '£120', duration: '2 days', href: `${RETREAT_URL}/structured/writing-from-life` },
-  { dates: '26–27 September', title: 'Self-Publishing Weekend',            price: '£180', duration: '2 days', href: `${RETREAT_URL}/structured/self-publishing` },
-  { dates: '27–29 November',  title: 'Making Time to Write',               price: '£210', duration: '3 days', href: `${RETREAT_URL}/structured/making-time-to-write` },
+const groupRetreats2027 = [
+  {
+    dates: '6–7 March', title: 'Poetry Weekend', duration: '2 days', price: '£216',
+    subtitle: 'Led by Emma Storr · Guest: Helen Farish',
+    message: "Hi, I'm interested in attending the 'Poetry Weekend' retreat (6–7 March 2027), led by Emma Storr.",
+  },
+  {
+    dates: '23–25 April', title: 'Focus on Writing', duration: '3 days', price: '£348',
+    subtitle: 'Developing and maintaining a sustainable writing practice · Led by Rosalyn Spencer',
+    message: "Hi, I'm interested in attending the 'Focus on Writing' retreat (23–25 April 2027).",
+  },
+  {
+    dates: '8–9 May', title: 'Nature Writing', duration: '2 days', price: '£216',
+    subtitle: 'Led by Susan Cartwright-Smith, Writer in Residence at Cumbria Wildlife Trust Gosling Sike Nature Reserve',
+    message: "Hi, I'm interested in attending the 'Nature Writing' retreat (8–9 May 2027).",
+  },
+  {
+    dates: '26 May', title: 'Freelance Writing', duration: 'Half day, 9:30–12:00', price: '£30',
+    subtitle: 'Led by Monique Gadella · No discounts available',
+    message: "Hi, I'm interested in attending the 'Freelance Writing' half-day (26 May 2027).",
+  },
+  {
+    dates: '16–18 July', title: 'Writing for Wellbeing', duration: '3 days', price: '£348',
+    subtitle: 'Led by Rosalyn Spencer',
+    message: "Hi, I'm interested in attending the 'Writing for Wellbeing' retreat (16–18 July 2027).",
+  },
+  {
+    dates: '20–22 August', title: 'Summer Writing Retreat', duration: '3 days', price: '£348',
+    subtitle: 'Led by Rosalyn Spencer',
+    message: "Hi, I'm interested in attending the 'Summer Writing Retreat' (20–22 August 2027).",
+  },
+  {
+    dates: '11–12 September', title: 'Writing from Life', duration: '2 days', price: '£216',
+    subtitle: 'Led by Rosalyn Spencer · Guests: Jude Davison (Sat eve) & Helen Errington (Sun)',
+    message: "Hi, I'm interested in attending the 'Writing from Life' retreat (11–12 September 2027).",
+  },
 ];
 
-const infoPages = [
-  { title: 'Retreat Information',   blurb: 'What to expect, what’s included, and everything you need to know before you book.', href: `${RETREAT_URL}/structured/information` },
-  { title: 'Ian, Ros & Milly',      blurb: 'Meet your hosts — and the cockerpoo who’ll greet you at the door.',              href: `${RETREAT_URL}/structured/hosts` },
-  { title: 'Booking Form',          blurb: 'Ready to book? Fill in the booking form to get started.',                        href: `${RETREAT_URL}/structured/book` },
-];
 ---
 
 <BaseLayout
@@ -28,7 +52,7 @@ const infoPages = [
   <RetreatSubNav current="structured" />
 
   <section class="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
-    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">For up to 6 writers</span>
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">For small groups of writers</span>
     <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Structured Weekend Retreats</h1>
     <p class="font-sans text-ink-light text-lg leading-relaxed max-w-2xl mx-auto">
       Two or three-day weekend retreats built around workshops and guided writing, with time for your own
@@ -55,41 +79,24 @@ const infoPages = [
     </div>
 
     <div class="bg-white/60 rounded-2xl border border-warm-200 px-6 py-2 mb-6">
-      {groupRetreats2026.map((r) => {
-        const message = `Hi, I'm interested in attending the '${r.title}' retreat (${r.dates} 2026).
+      {groupRetreats2027.map((r) => {
+        const fullMessage = `${r.message}
 
 Number of attendees:
 Accommodation needed (£40–£50/night):
 Any questions or special requirements:`;
-        const href = r.href ?? `${RETREAT_URL}/contact?message=${encodeURIComponent(message)}`;
-        return <RetreatCard dates={r.dates} title={r.title} price={r.price} duration={r.duration} href={href} />;
+        const href = `${RETREAT_URL}/contact?message=${encodeURIComponent(fullMessage)}`;
+        return <RetreatCard dates={r.dates} title={r.title} duration={r.duration} price={r.price} subtitle={r.subtitle} href={href} />;
       })}
     </div>
 
     <div class="font-sans text-sm text-warm-400 space-y-1">
-      <p>3-day retreats: Fri &amp; Sat 9:30&ndash;20:30, and Sun 9:30&ndash;16:30</p>
-      <p>2-day retreats: Sat 9:30&ndash;20:30, and Sun 9:30&ndash;16:30</p>
+      <p>3-day retreats: Fri &amp; Sat 9:30am&ndash;8:30pm, and Sun 9:30am&ndash;4:30pm</p>
+      <p>2-day retreats: Sat 9:30am&ndash;8:30pm, and Sun 9:30am&ndash;4:30pm</p>
+      <p class="mt-3">Early bird discount available if paid in full at least 60 days before the event: <strong class="text-ink">£10 off</strong> two-day retreats, <strong class="text-ink">£15 off</strong> three-day retreats</p>
+      <p><a href={`${RETREAT_URL}/membership`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">Longthwaite Writers&rsquo; Club</a> members save 30% &mdash; <a href={`${RETREAT_URL}/membership`} class="text-forest hover:text-forest-dark underline decoration-forest/40 transition-colors">find out more</a></p>
       <p class="mt-3">Limited accommodation available from <strong class="text-ink">£40&ndash;£50 per night</strong></p>
-    </div>
-  </section>
-
-  <div class="max-w-4xl mx-auto px-6">
-    <hr class="border-warm-200" />
-  </div>
-
-  <section class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="font-serif text-3xl text-ink mb-8 text-center">Background Information</h2>
-    <div class="grid sm:grid-cols-3 gap-5">
-      {infoPages.map(({ title, blurb, href }) => (
-        <a
-          href={href}
-          class="flex flex-col bg-white/60 rounded-2xl border border-warm-200 p-6 hover:border-forest/40 hover:bg-forest-pale/40 transition-colors group"
-        >
-          <h3 class="font-serif text-lg text-ink group-hover:text-forest transition-colors mb-2">{title}</h3>
-          <p class="font-sans text-sm text-warm-400 leading-relaxed flex-1">{blurb}</p>
-          <span class="font-sans text-xs text-forest opacity-0 group-hover:opacity-100 transition-opacity mt-3">Read more &rarr;</span>
-        </a>
-      ))}
+      <p class="mt-3 italic">We need at least 4 participants for a group retreat to go ahead. If the minimum isn&rsquo;t reached 28 days before the date, we&rsquo;ll cancel the event and issue a full refund within 5 working days.</p>
     </div>
   </section>
 

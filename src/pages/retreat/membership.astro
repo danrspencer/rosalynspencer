@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RetreatSubNav from '../../components/RetreatSubNav.astro';
+import { RETREAT_URL } from '../../config';
+
+const discounts = [
+  '30% off structured weekend retreats',
+  '50% off in-person Writing Days',
+  '20% off individual residential retreats',
+];
+
+const memberEvents = [
+  {
+    title: 'Monthly online writing session',
+    when: '1st Sunday of the month, 7–8pm',
+    blurb: 'Join other members online for a focused hour of writing together.',
+  },
+  {
+    title: 'Monthly online group coaching session',
+    when: '3rd Sunday of the month, 7–8pm',
+    blurb: 'Group coaching to help you keep moving forward with your writing project.',
+  },
+  {
+    title: 'Members-only Garden Party',
+    when: 'Saturday 24th July 2027, 10:30am–2:30pm',
+    blurb: 'Save the date! An afternoon in the garden at Longthwaite for members only.',
+  },
+];
+---
+
+<BaseLayout
+  title="Longthwaite Writers' Club"
+  description="Membership of the Longthwaite Writers' Club: discounts on retreats and Writing Days, monthly online sessions, a members-only Garden Party and the chance to be published in the annual anthology."
+  section="retreat"
+>
+  <RetreatSubNav current="club" />
+
+  <section class="max-w-3xl mx-auto px-6 pt-16 pb-8 text-center">
+    <span class="font-sans text-xs font-medium tracking-widest uppercase text-forest">New for 2027</span>
+    <h1 class="font-serif text-5xl font-semibold text-ink mt-3 mb-4">Longthwaite Writers&rsquo; Club</h1>
+    <p class="font-sans text-ink-light text-lg leading-relaxed">
+      Membership is intended to keep costs down for those who have become regulars at the retreat &mdash; and to
+      keep you connected with fellow writers between visits.
+    </p>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-6 pb-24">
+    <div class="bg-forest-pale rounded-2xl p-6 sm:p-8 mb-10 text-center">
+      <p class="font-sans text-ink-light">
+        Membership is <strong class="text-ink">£22 a month</strong> &mdash; or just
+        <strong class="text-ink">£15 a month</strong> with our introductory offer if you join before
+        31st December 2026.
+      </p>
+    </div>
+
+    <h2 class="font-serif text-3xl text-ink mb-4">Member discounts</h2>
+    <ul class="font-sans text-ink-light space-y-1.5 mb-10">
+      {discounts.map((item) => (
+        <li class="flex items-start gap-2">
+          <span class="text-forest mt-0.5">&#10003;</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+
+    <h2 class="font-serif text-3xl text-ink mb-4">Sessions &amp; events for members</h2>
+    <div class="space-y-4 mb-10">
+      {memberEvents.map(({ title, when, blurb }) => (
+        <div class="bg-white/60 rounded-2xl border border-warm-200 p-5">
+          <h3 class="font-serif text-xl text-ink">{title}</h3>
+          <p class="font-sans text-sm font-medium text-forest mt-0.5 mb-1">{when}</p>
+          <p class="font-sans text-sm text-ink-light leading-relaxed">{blurb}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="font-serif text-3xl text-ink mb-4">Also included</h2>
+    <ul class="font-sans text-ink-light space-y-1.5 mb-10">
+      <li class="flex items-start gap-2">
+        <span class="text-forest mt-0.5">&#10003;</span>
+        <span>Opportunity to be published in the Members&rsquo; Annual Anthology</span>
+      </li>
+    </ul>
+
+    <div class="text-center pt-4 border-t border-warm-200">
+      <p class="font-sans text-ink-light mb-6 pt-8">
+        Interested in joining, or have a question? Get in touch and we&rsquo;ll be happy to help.
+      </p>
+      <a
+        href={`${RETREAT_URL}/contact?message=${encodeURIComponent("Hi, I'd like to join the Longthwaite Writers' Club.")}`}
+        class="inline-block bg-forest text-white font-sans text-sm font-medium tracking-wide px-8 py-3 rounded-full hover:bg-forest-light transition-colors"
+      >
+        Join the Club
+      </a>
+    </div>
+  </div>
+
+</BaseLayout>

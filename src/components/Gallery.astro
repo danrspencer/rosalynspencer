@@ -28,7 +28,7 @@ const imagesWithDimensions = images.map(({ src, alt }) => {
   Each row is the same height, widths vary to fill the container.
   JavaScript computes the layout client-side using the real image dimensions.
 -->
-<div id="gallery" class="relative w-full">
+<div data-gallery class="relative w-full">
   {imagesWithDimensions.map(({ src, alt, width, height }) => (
     <a
       href={src}
@@ -57,9 +57,9 @@ const imagesWithDimensions = images.map(({ src, alt }) => {
   // @ts-ignore — justified-layout is a CJS module, no types package needed
   import justifiedLayout from 'justified-layout';
 
-  const container = document.getElementById('gallery')!;
+  const containers = Array.from(document.querySelectorAll<HTMLElement>('[data-gallery]'));
 
-  function layoutGallery() {
+  function layoutGallery(container: HTMLElement) {
     const items = Array.from(container.querySelectorAll<HTMLElement>('a[data-w]'));
     const dims = items.map(el => ({
       width: parseInt(el.dataset.w!),
@@ -86,23 +86,24 @@ const imagesWithDimensions = images.map(({ src, alt }) => {
     });
   }
 
-  layoutGallery();
+  containers.forEach(layoutGallery);
 
   // Re-layout on resize (debounced)
   let resizeTimer: ReturnType<typeof setTimeout>;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(layoutGallery, 150);
+    resizeTimer = setTimeout(() => containers.forEach(layoutGallery), 150);
   });
 
-  // PhotoSwipe lightbox — no target="_blank" needed, PhotoSwipe intercepts clicks
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: '#gallery',
-    children: 'a[data-pswp-width]',
-    pswpModule: () => import('photoswipe'),
-    bgOpacity: 0.93,
-    padding: { top: 20, bottom: 20, left: 20, right: 20 },
+  // PhotoSwipe lightbox per gallery — no target="_blank" needed, PhotoSwipe intercepts clicks
+  containers.forEach((container) => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: container,
+      children: 'a[data-pswp-width]',
+      pswpModule: () => import('photoswipe'),
+      bgOpacity: 0.93,
+      padding: { top: 20, bottom: 20, left: 20, right: 20 },
+    });
+    lightbox.init();
   });
-
-  lightbox.init();
 </script>
