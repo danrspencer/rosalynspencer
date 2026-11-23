@@ -1,0 +1,8 @@
+# Old Wix URLs still indexed by Google — send them to the right new pages.
+# Netlify only applies these when no real file matches the request, so
+# existing pages are never affected.
+/about-1  /about  301
+/shop     /book   301
+
+# Anything else stale goes home.
+/*        /       301
