@@ -4,5 +4,4 @@
 /about-1  /about  301
 /shop     /book   301
 
-# Anything else stale goes home.
-/*        /       301
+# Anything else stale falls through to the custom 404 page (src/pages/404.astro).
